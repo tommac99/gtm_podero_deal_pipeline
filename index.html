@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Podero — Lead Pipeline Visualizer</title>
+<title>Podero — Deal Pipeline Visualizer</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -33,7 +33,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .logo{width:28px;height:28px;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 2px 4px rgba(37,99,235,.3)}
 .htitle{font-size:14px;font-weight:600;color:var(--th)}
 .hsub{font-size:11px;color:var(--td)}
-.hbadge{background:var(--grd);border:1px solid var(--grb);color:var(--gr);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.hbadge{background:var(--ord);border:1px solid var(--orb);color:var(--or);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
 .tabs{display:flex;gap:3px}
 .tbtn{padding:6px 13px;border-radius:var(--r);font-size:13px;cursor:pointer;border:1px solid transparent;color:var(--tm);background:none;transition:all .14s;font-family:var(--fn)}
 .tbtn:hover{background:var(--bga);color:var(--th)}
@@ -47,38 +47,27 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .sl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--td);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .sl::after{content:'';flex:1;height:1px;background:var(--b)}
 
-/* SOURCES */
-.srcs{margin-bottom:24px}
-.srcrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
-.sch{display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);transition:all .14s;box-shadow:var(--shadow)}
-.sch:hover{border-color:var(--ac);color:var(--th)}
-.sdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.do{background:#2563eb}.di{background:var(--gr)}.de{background:var(--or)}.dr{background:var(--pu)}
-.sarr{color:var(--bh);font-size:18px;display:flex;align-items:center}
-.shigh{border-color:var(--ac)!important;color:var(--ac)!important;font-weight:600;background:var(--acd)!important}
-
 /* PIPELINE CARDS */
 .pflow{display:flex;align-items:stretch;gap:0;margin-bottom:4px;overflow-x:auto;padding-bottom:8px}
 .pflow::-webkit-scrollbar{height:4px}
 .pconn{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:26px;padding-top:20px;color:var(--bh)}
-.sc{flex:1;min-width:170px;max-width:230px;cursor:pointer}
+.sc{flex:1;min-width:160px;max-width:210px;cursor:pointer}
 .si{background:#fff;border:1px solid var(--b);border-radius:var(--rl);padding:14px;transition:all .14s;height:100%;min-height:195px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .sc:hover .si{border-color:var(--bh);background:var(--bgh);box-shadow:var(--shadow-md)}
 .sc.on .si{border-color:var(--ac);background:#fff;box-shadow:0 0 0 3px var(--acd),var(--shadow-md)}
 .snum{font-size:10px;font-family:var(--mo);color:var(--td);margin-bottom:5px}
 .sname{font-size:14px;font-weight:700;color:var(--th);margin-bottom:8px;line-height:1.2}
+.spct{font-size:12px;font-weight:600;color:var(--tm);margin-bottom:5px}
 .sbadges{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px}
 .badge{padding:2px 7px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.01em}
 .bns{background:var(--bg);color:var(--tm);border:1px solid var(--b)}
 .bip{background:var(--acd);color:#1d4ed8;border:1px solid var(--acb)}
 .bq{background:var(--grd);color:#15803d;border:1px solid var(--grb)}
 .bdq{background:var(--rdd);color:#b91c1c;border:1px solid var(--rdb)}
-.bsdr{background:var(--ywd);color:var(--yw);border:1px solid var(--ywb)}
 .bae{background:var(--pud);color:#6d28d9;border:1px solid var(--pub)}
+.bgate{background:var(--ord);color:#92400e;border:1px solid var(--orb)}
 .smean{font-size:11px;color:var(--tm);line-height:1.5;margin-bottom:9px;flex:1}
-.sla{margin-top:4px;padding:4px 8px;border-radius:4px;font-size:10px;font-weight:500;display:flex;align-items:center;gap:4px}
-.sla-w{background:var(--ord);color:var(--or);border:1px solid var(--orb)}
-.sla-g{background:var(--grd);color:var(--gr);border:1px solid var(--grb)}
+.stbc{margin-top:4px;padding:4px 8px;border-radius:4px;font-size:10px;font-weight:600;background:var(--ord);color:var(--yw);border:1px solid var(--orb);display:flex;align-items:center;gap:4px}
 .sstats{display:flex;gap:10px;margin-top:auto;padding-top:9px;border-top:1px solid var(--b)}
 .sstat{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--td)}
 .sexits{margin-top:7px;display:flex;gap:4px;flex-wrap:wrap}
@@ -86,6 +75,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .xfwd{background:var(--acd);color:#1d4ed8;border:1px solid var(--acb)}
 .xcl{background:var(--rdd);color:#b91c1c;border:1px solid var(--rdb)}
 .xext{background:var(--pud);color:#6d28d9;border:1px solid var(--pub)}
+.xgr{background:var(--grd);color:#166534;border:1px solid var(--grb)}
 .sc.ext .si{border-style:dashed;opacity:.7;min-height:auto}
 .sc.ext:hover .si{opacity:1}
 
@@ -107,7 +97,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .dtab{padding:9px 13px;font-size:12px;cursor:pointer;color:var(--tm);border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;font-family:var(--fn);transition:all .14s;font-weight:500}
 .dtab:hover{color:var(--th)}
 .dtab.on{color:var(--ac);border-bottom-color:var(--ac)}
-.detbody{max-height:420px;overflow-y:auto;padding:18px;background:#fff}
+.detbody{max-height:440px;overflow-y:auto;padding:18px;background:#fff}
 .dsec{display:none}.dsec.on{display:block}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .dblock h4{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--td);margin-bottom:10px}
@@ -121,6 +111,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .anote-b{background:var(--acd);border:1px solid var(--acb);color:#1e40af}
 .anote-g{background:var(--grd);border:1px solid var(--grb);color:#166534}
 .anote-r{background:var(--rdd);border:1px solid var(--rdb);color:#991b1b}
+.tbc-tag{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:700;background:var(--ord);color:var(--yw);border:1px solid var(--orb)}
 
 /* Auto items */
 .ai{background:var(--bg);border:1px solid var(--b);border-radius:var(--r);padding:10px 12px;margin-bottom:8px}
@@ -132,6 +123,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .ai.tc{border-left:3px solid var(--rd)}
 .ai.tr{border-left:3px solid #db2777}
 .ai.tsum{border-left:3px solid #0891b2}
+.ai.tgate{border-left:3px solid var(--or)}
 .atrig{font-size:10px;color:var(--tm);margin-bottom:3px;display:flex;align-items:center;gap:5px}
 .aact{font-size:12px;color:var(--th);line-height:1.4}
 .albl{display:inline-block;padding:1px 5px;border-radius:3px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-right:4px}
@@ -140,16 +132,17 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .ls{background:var(--pud);color:#5b21b6}
 .lt{background:var(--grd);color:#166534}
 .lc{background:var(--rdd);color:#991b1b}
-.lr{background:#fce7f3;color:#9d174d}
+.lgate{background:var(--ord);color:#92400e}
 .lsum{background:#cffafe;color:#155e75}
 
 /* Field rows */
 .fi{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--b);align-items:flex-start}
 .fi:last-child{border-bottom:none}
-.fn2{font-family:var(--mo);font-size:11px;color:var(--ac);min-width:165px;flex-shrink:0}
+.fn2{font-family:var(--mo);font-size:11px;color:var(--ac);min-width:170px;flex-shrink:0}
 .ftype{font-size:10px;color:var(--tm);padding:1px 6px;background:var(--bg);border:1px solid var(--b);border-radius:3px;min-width:64px;text-align:center;flex-shrink:0;font-weight:500}
 .fdesc{font-size:12px;color:var(--tm);line-height:1.4}
 .freq{color:var(--rd);font-size:10px;font-weight:700;flex-shrink:0;padding-top:2px}
+.ftbc{color:var(--or);font-size:10px;font-weight:700;flex-shrink:0;padding-top:2px}
 
 /* Exit rows */
 .ei{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:var(--r);margin-bottom:6px;background:var(--bg);border:1px solid var(--b)}
@@ -157,27 +150,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .earr{font-size:17px;flex-shrink:0;padding-top:1px}
 .ename{font-weight:600;font-size:13px;margin-bottom:2px}
 .ecrit{font-size:12px;color:var(--tm);line-height:1.4}
-
-/* CADENCE VIEW */
-.cadwrap{max-width:700px}
-.cadsumrow{display:flex;gap:10px;margin:0 0 18px;flex-wrap:wrap}
-.csitem{display:flex;align-items:center;gap:7px;padding:7px 12px;background:#fff;border:1px solid var(--b);border-radius:var(--r);font-size:12px;box-shadow:var(--shadow)}
-.cadhdr{display:grid;grid-template-columns:64px 110px 1fr;gap:14px;padding:0 0 8px;border-bottom:1px solid var(--bh);margin-bottom:3px}
-.cadhdr span{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--td)}
-.cadrow{display:grid;grid-template-columns:64px 110px 1fr;gap:14px;padding:7px 0;border-bottom:1px solid var(--b);align-items:center}
-.cadrow:last-child{border-bottom:none}
-.cday{font-family:var(--mo);font-size:12px;color:var(--tm)}
-.cch{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600}
-.ccall{color:var(--gr)}.cemail{color:var(--ac)}.cli{color:var(--pu)}.cauto{color:var(--rd)}
-.cact{font-size:13px;color:var(--t)}
-.cadnote{margin-top:16px;padding:12px 14px;background:var(--ord);border:1px solid var(--orb);border-radius:var(--r);font-size:12px;color:#92400e;line-height:1.6}
+.egate{font-size:11px;color:var(--or);font-weight:600;margin-top:4px}
 
 /* AUTOMATIONS VIEW */
 .autogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
 .acard{background:#fff;border:1px solid var(--b);border-radius:var(--rl);padding:14px;box-shadow:var(--shadow)}
 .acstage{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--tm);margin-bottom:10px;display:flex;align-items:center;gap:6px;font-weight:600}
 .acstage::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.st1::before{background:#a1a1aa}.st2::before{background:var(--ac)}.st3::before{background:#3b82f6}.st4::before{background:#6366f1}.st5::before{background:var(--gr)}.st6::before{background:var(--rd)}
+.st1::before{background:#a1a1aa}.st2::before{background:var(--ac)}.st3::before{background:#3b82f6}.st4::before{background:#6366f1}.st5::before{background:var(--gr)}.st6::before{background:var(--rd)}.st7::before{background:#0891b2}.st8::before{background:var(--or)}
+.actrig{font-size:11px;color:var(--tm);margin-bottom:6px;padding:5px 8px;background:var(--bg);border:1px solid var(--b);border-radius:4px;display:flex;align-items:center;gap:5px}
+.acact{font-size:12px;color:var(--th);line-height:1.5;margin-bottom:8px}
+.acstatus{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:600}
+.as-build{background:var(--acd);color:#1e40af;border:1px solid var(--acb)}
+.as-tbc{background:var(--ord);color:#92400e;border:1px solid var(--orb)}
 
 /* PROPERTIES VIEW */
 .ptable{width:100%;border-collapse:collapse}
@@ -188,12 +173,64 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 .pobj{display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:var(--acd);color:#1e40af;border:1px solid var(--acb);font-weight:600}
 .ptyp{color:var(--tm);font-size:11px}
 .preq{color:var(--rd);font-size:11px;font-weight:700}
+.ptbc{color:var(--or);font-size:11px;font-weight:700}
 
 /* FLOWS VIEW */
 .fblock{background:#fff;border:1px solid var(--b);border-radius:var(--rl);padding:18px;margin-bottom:16px;box-shadow:var(--shadow)}
 .fblock h3{font-size:13px;font-weight:700;color:var(--th);margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .fcode{font-family:var(--mo);font-size:12px;line-height:2;white-space:pre-wrap;background:var(--bg);border:1px solid var(--b);border-radius:var(--r);padding:14px}
-.fs{color:var(--th)}.fa{color:var(--tm)}.fau{color:var(--gr)}.fsl{color:var(--pu)}.fw{color:var(--or)}.fsum{color:#0891b2}
+.fs{color:var(--th)}.fa{color:var(--tm)}.fau{color:var(--gr)}.fsl{color:var(--pu)}.fw{color:var(--or)}.fsum{color:#0891b2}.fgate{color:var(--or)}
+.ftbc-note{margin-top:12px;padding:8px 12px;background:var(--ord);border:1px solid var(--orb);border-radius:var(--r);font-size:12px;color:#92400e;display:flex;align-items:center;gap:6px}
+
+/* QUESTIONS VIEW */
+.qwrap{max-width:860px}
+.qprompt-bar{background:#fff;border:1px solid var(--b);border-radius:var(--rl);padding:14px 18px;margin-bottom:20px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.qprompt-label{font-size:13px;color:var(--th);font-weight:600}
+.qprompt-sub{font-size:11px;color:var(--tm);margin-top:2px}
+.qcopy-btn{padding:8px 16px;background:var(--ac);color:#fff;border:none;border-radius:var(--r);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--fn);transition:background .14s;flex-shrink:0}
+.qcopy-btn:hover{background:#1d4ed8}
+.qcopy-btn.copied{background:var(--gr)}
+.qsec{margin-bottom:28px}
+.qsec-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--td);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.qsec-title::after{content:'';flex:1;height:1px;background:var(--b)}
+.qcard{background:#fff;border:1px solid var(--b);border-radius:var(--rl);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow)}
+.qcard-hdr{padding:12px 16px;display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.qcard-hdr:hover{background:var(--bgh)}
+.qnum{font-family:var(--mo);font-size:11px;color:var(--td);flex-shrink:0;padding-top:1px}
+.qtitle{font-size:13px;font-weight:600;color:var(--th);flex:1}
+.qtbc{padding:2px 7px;border-radius:3px;font-size:10px;font-weight:700;background:var(--ord);color:#92400e;border:1px solid var(--orb);flex-shrink:0}
+.qbody{padding:0 16px 14px 36px;display:none}
+.qbody.on{display:block}
+.qbody p{font-size:12px;color:var(--tm);line-height:1.6;margin-bottom:10px}
+.qopts{list-style:none;margin-bottom:10px}
+.qopts li{font-size:12px;color:var(--t);padding:4px 0;display:flex;gap:6px}
+.qopts li::before{content:'☐';color:var(--or)}
+.qtable{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.qtable th{text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--td);padding:5px 8px;border-bottom:1px solid var(--bh);background:var(--bg)}
+.qtable td{padding:6px 8px;border-bottom:1px solid var(--b);color:var(--tm);font-family:var(--mo)}
+.qtable td:first-child{color:var(--t);font-family:var(--fn)}
+.qprop{display:inline-flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.qprop span{padding:3px 8px;background:var(--bg);border:1px solid var(--b);border-radius:3px;font-size:11px;color:var(--t)}
+
+/* PROMPT TAB */
+.tbtn-prompt{background:var(--ac)!important;color:#fff!important;border-color:var(--ac)!important}
+.tbtn-prompt:hover{background:#1d4ed8!important}
+.tbtn-prompt.on{background:#1d4ed8!important;color:#fff!important;border-color:#1d4ed8!important;box-shadow:0 0 0 3px var(--acd),var(--shadow)!important}
+.pwrap{max-width:800px}
+.pblock{background:#fff;border:1px solid var(--b);border-radius:var(--rl);padding:20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.pblock-title{font-size:13px;font-weight:700;color:var(--th);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pblock-sub{font-size:12px;color:var(--tm);line-height:1.6;margin-bottom:14px}
+.pcopy-row{display:flex;gap:10px;align-items:center}
+.pcopy-btn{padding:9px 20px;background:var(--ac);color:#fff;border:none;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fn);transition:background .14s}
+.pcopy-btn:hover{background:#1d4ed8}
+.pcopy-btn.copied{background:var(--gr)}
+.pcopy-hint{font-size:11px;color:var(--tm);line-height:1.5}
+.psteps{list-style:none;margin:14px 0 0}
+.psteps li{font-size:12px;color:var(--t);padding:6px 0;border-bottom:1px solid var(--b);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.psteps li:last-child{border-bottom:none}
+.pstep-num{width:20px;height:20px;border-radius:50%;background:var(--ac);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ptopics{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ptopic{padding:3px 10px;background:var(--bg);border:1px solid var(--b);border-radius:20px;font-size:11px;color:var(--tm)}
 </style>
 </head>
 <body>
@@ -202,17 +239,18 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
   <div class="hlo">
     <div class="logo">P</div>
     <div>
-      <div class="htitle">Lead Pipeline Visualizer</div>
-      <div class="hsub">SDR · Lead Pipeline v2 · HubSpot</div>
+      <div class="htitle">Deal Pipeline Visualizer</div>
+      <div class="hsub">AE · Deal Pipeline · HubSpot · Phase 2</div>
     </div>
-    <div class="hbadge">Build Phase 1</div>
+    <div class="hbadge">⚠️ 10 Open Questions</div>
   </div>
   <nav class="tabs">
     <button class="tbtn on" onclick="sv('pipeline',this)">Pipeline</button>
-    <button class="tbtn" onclick="sv('cadence',this)">Cadence</button>
     <button class="tbtn" onclick="sv('automations',this)">Automations</button>
     <button class="tbtn" onclick="sv('properties',this)">Properties</button>
     <button class="tbtn" onclick="sv('flows',this)">Flows</button>
+    <button class="tbtn" onclick="sv('questions',this)">Questions <span style="background:var(--ord);color:#92400e;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:700;margin-left:3px">10</span></button>
+    <button class="tbtn tbtn-prompt" onclick="sv('prompt',this)">⚡ Get Prompt</button>
   </nav>
 </header>
 
@@ -220,114 +258,122 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 
 <!-- ══ PIPELINE VIEW ══════════════════════════════════════════ -->
 <div id="view-pipeline" class="view on">
-  <div class="srcs">
-    <div class="sl">Lead Sources</div>
-    <div class="srcrow">
-      <div class="sch"><span class="sdot do"></span>PhantomBuster</div>
-      <div class="sch"><span class="sdot do"></span>SDR Manual</div>
-      <span class="sarr">→</span>
-      <div class="sch"><span class="sdot di"></span>Website Calculator</div>
-      <div class="sch"><span class="sdot di"></span>Demo Booking</div>
-      <div class="sch"><span class="sdot di"></span>LinkedIn Ads</div>
-      <div class="sch"><span class="sdot di"></span>Organic</div>
-      <span class="sarr">→</span>
-      <div class="sch"><span class="sdot de"></span>Event</div>
-      <span class="sarr">→</span>
-      <div class="sch"><span class="sdot dr"></span>Customer Referral</div>
-      <div class="sch"><span class="sdot dr"></span>Partner Referral</div>
-      <span class="sarr" style="color:var(--ac);font-size:22px;padding:0 4px">→</span>
-      <div class="sch shigh">New Lead</div>
-    </div>
+  <div class="sl">Deal Sources</div>
+  <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:22px">
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;flex-shrink:0"></span>Outbound Calling</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;flex-shrink:0"></span>Outbound Mailing</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;flex-shrink:0"></span>Outbound LinkedIn</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gr);flex-shrink:0"></span>Events</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gr);flex-shrink:0"></span>Network / Referral</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:var(--pu);flex-shrink:0"></span>Endios</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Inbound Paid</div>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--b);background:#fff;color:var(--tm);box-shadow:var(--shadow)"><span style="width:6px;height:6px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Inbound Organic</div>
+    <span style="color:var(--bh);font-size:18px">→</span>
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:12px;border:1px solid var(--ac);background:var(--acd);color:var(--ac);font-weight:600;box-shadow:var(--shadow)">SQL Lead → New Deal</div>
   </div>
 
   <div class="sl">Pipeline Stages</div>
   <div class="pflow">
-    <!-- 1 -->
-    <div class="sc" id="sc-new-lead" onclick="openStage('new-lead')">
+    <!-- Stage 1 -->
+    <div class="sc" id="sc-s1" onclick="openStage('s1')">
       <div class="si">
-        <div class="snum">Stage 1</div><div class="sname">New Lead</div>
-        <div class="sbadges"><span class="badge bns">Not Started</span><span class="badge bsdr">SDR</span></div>
-        <div class="smean">Lead entered the pipeline. SDR has not yet started outreach.</div>
-        <div class="sla sla-w">⏱ Inbound: 24h · Outbound: 5 days</div>
-        <div class="sexits"><span class="xb xfwd">→ Attempting</span></div>
+        <div class="snum">Stage 1 · 5%</div><div class="sname">New Deal</div>
+        <div class="sbadges"><span class="badge bns">In Progress</span><span class="badge bae">AE</span></div>
+        <div class="smean">AE decides to qualify after initial SDR call. Min required fields enforced — no empty deals. SDRs do not qualify.</div>
+        <div class="stbc">⚠️ Quality problem: some AEs create from any meeting</div>
+        <div class="sexits"><span class="xb xfwd">→ Qualified Deal</span><span class="xb xcl">↓ Closed Lost</span></div>
+        <div class="sstats"><div class="sstat">📋 6 fields</div><div class="sstat">⚡ 2 autos</div></div>
+      </div>
+    </div>
+    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <!-- Stage 2 -->
+    <div class="sc" id="sc-s2" onclick="openStage('s2')">
+      <div class="si">
+        <div class="snum">Stage 2 · 25%</div><div class="sname">Qualified Deal</div>
+        <div class="sbadges"><span class="badge bq">Qualified</span><span class="badge bae">AE + SE</span></div>
+        <div class="smean">4/5 SUGAR + EB intro + MAP. Champion = often innovation manager / head of product. EB intro is non-negotiable.</div>
+        <div class="stbc">⚠️ TBC: SLA days</div>
+        <div class="sexits"><span class="xb xfwd">→ SoW Approval</span><span class="xb xcl">↓ Closed Lost</span></div>
+        <div class="sstats"><div class="sstat">📋 5 fields</div><div class="sstat">⚡ 3 autos</div></div>
+      </div>
+    </div>
+    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <!-- Stage 3 -->
+    <div class="sc" id="sc-s3" onclick="openStage('s3')">
+      <div class="si">
+        <div class="snum">Stage 3 · 30%</div><div class="sname">SoW Approval</div>
+        <div class="sbadges"><span class="badge bgate">Hard Gate</span><span class="badge bae">AE + Chris</span></div>
+        <div class="smean">Chris approves SoW + Purple Sheet. Purpose debated: Sasu thinks it may belong inside Biz & Tech Eval.</div>
+        <div class="stbc">⚠️ Stage purpose under review — Sasu/Beni input needed</div>
+        <div class="sexits"><span class="xb xfwd">→ Biz &amp; Tech Eval</span><span class="xb xcl">↓ Back to Qualified</span></div>
+        <div class="sstats"><div class="sstat">📋 3 fields</div><div class="sstat">⚡ 2 autos</div></div>
+      </div>
+    </div>
+    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <!-- Stage 4 -->
+    <div class="sc" id="sc-s4" onclick="openStage('s4')">
+      <div class="si">
+        <div class="snum">Stage 4 · 35%</div><div class="sname">Biz &amp; Tech Eval</div>
+        <div class="sbadges"><span class="badge bip">Evaluating</span><span class="badge bae">AE + SE</span></div>
+        <div class="smean">POV/POC phase. 5/5 SUGAR required. Parallel business + technical tracks.</div>
+        <div class="stbc">⚠️ TBC: SLA days</div>
+        <div class="sexits"><span class="xb xfwd">→ Commercial Review</span><span class="xb xcl">↓ Closed Lost</span></div>
+        <div class="sstats"><div class="sstat">📋 5 fields</div><div class="sstat">⚡ 2 autos</div></div>
+      </div>
+    </div>
+    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <!-- Stage 5 -->
+    <div class="sc" id="sc-s5" onclick="openStage('s5')">
+      <div class="si">
+        <div class="snum">Stage 5 · 50%</div><div class="sname">Commercial Review</div>
+        <div class="sbadges"><span class="badge bip">Negotiating</span><span class="badge bae">AE + Director</span></div>
+        <div class="smean">POV done. Tabling commercial offer. Sign date + signer confirmed. 3yr standard.</div>
+        <div class="sexits"><span class="xb xfwd">→ Committed</span><span class="xb xcl">↓ Closed Lost</span></div>
         <div class="sstats"><div class="sstat">📋 4 fields</div><div class="sstat">⚡ 2 autos</div></div>
       </div>
     </div>
     <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <!-- 2 -->
-    <div class="sc" id="sc-attempting" onclick="openStage('attempting')">
+    <!-- Stage 6 -->
+    <div class="sc" id="sc-s6" onclick="openStage('s6')">
       <div class="si">
-        <div class="snum">Stage 2</div><div class="sname">Attempting</div>
-        <div class="sbadges"><span class="badge bip">In Progress</span><span class="badge bsdr">SDR</span></div>
-        <div class="smean">SDR has started outreach. At least one activity logged.</div>
-        <div class="sla sla-w">⏱ Max 21 days before auto-close</div>
-        <div class="sexits"><span class="xb xfwd">→ Connected</span><span class="xb xcl">↓ Closed Lost</span></div>
-        <div class="sstats"><div class="sstat">📋 2 fields</div><div class="sstat">⚡ 2 autos</div></div>
+        <div class="snum">Stage 6 · 90%</div><div class="sname">Committed</div>
+        <div class="sbadges"><span class="badge bq">Vendor of Choice</span><span class="badge bae">AE</span></div>
+        <div class="smean">Super strict (Sasu). Verbal YES from EB (not champion). Known sign timeline. Established next steps toward signature.</div>
+        <div class="sexits"><span class="xb xgr">→ Closed Won</span><span class="xb xcl">↓ Closed Lost</span></div>
+        <div class="sstats"><div class="sstat">📋 2 fields</div><div class="sstat">⚡ 1 auto</div></div>
       </div>
     </div>
     <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <!-- 3 -->
-    <div class="sc" id="sc-connected" onclick="openStage('connected')">
+    <!-- Stage 7 -->
+    <div class="sc" id="sc-s7" onclick="openStage('s7')">
       <div class="si">
-        <div class="snum">Stage 3</div><div class="sname">Connected</div>
-        <div class="sbadges"><span class="badge bip">In Progress</span><span class="badge bsdr">SDR</span></div>
-        <div class="smean">Live conversation — call answered or meaningful reply.</div>
-        <div class="sla sla-w">⏱ Book meeting within 48h</div>
-        <div class="sexits"><span class="xb xfwd">→ Meeting Booked</span><span class="xb xcl">↓ Closed Lost</span></div>
-        <div class="sstats"><div class="sstat">📋 2 fields</div><div class="sstat">⚡ 2 autos</div></div>
-      </div>
-    </div>
-    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <!-- 4 -->
-    <div class="sc" id="sc-meeting-booked" onclick="openStage('meeting-booked')">
-      <div class="si">
-        <div class="snum">Stage 4</div><div class="sname">Meeting Booked</div>
-        <div class="sbadges"><span class="badge bip">In Progress</span><span class="badge bae">SDR → AE</span></div>
-        <div class="smean">Discovery call scheduled. Two entry paths.</div>
-        <div class="sla sla-w">⏱ Meeting within 14 days of booking</div>
-        <div class="sexits"><span class="xb xfwd">→ SQL</span><span class="xb xcl">↓ Closed Lost</span></div>
-        <div class="sstats"><div class="sstat">📋 1 field</div><div class="sstat">⚡ 5 autos</div></div>
-      </div>
-    </div>
-    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <!-- 5 -->
-    <div class="sc" id="sc-sql" onclick="openStage('sql')">
-      <div class="si">
-        <div class="snum">Stage 5</div><div class="sname">SQL</div>
-        <div class="sbadges"><span class="badge bq">Qualified</span><span class="badge bae">AE</span></div>
-        <div class="smean">AE confirmed real opportunity. Deal created in Deal Pipeline.</div>
-        <div class="sexits"><span class="xb xext">↗ Deal Pipeline</span></div>
-        <div class="sstats"><div class="sstat">📋 6 SQL criteria</div></div>
-      </div>
-    </div>
-    <div class="pconn"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h10M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <!-- Exit -->
-    <div class="sc ext">
-      <div class="si" style="border-color:var(--pub)">
-        <div class="snum">Exit</div>
-        <div class="sname" style="color:#6d28d9">Deal Pipeline</div>
-        <div class="smean" style="font-size:11px">AE creates Unqualified Deal · lead_source carried · Lead stays in SQL</div>
-        <div class="sexits"><span class="xb xext">↗ Deal Pipeline</span></div>
+        <div class="snum">Stage 7</div><div class="sname">Closed Won</div>
+        <div class="sbadges"><span class="badge bq">Won</span></div>
+        <div class="smean">Billing details, onboarding deck, SUGAARR handover notes for CSM. EB case study?</div>
+        <div class="sexits"><span class="xb xext">→ CSM Handoff</span></div>
+        <div class="sstats"><div class="sstat">📋 3 fields</div><div class="sstat">⚡ 2 autos</div></div>
       </div>
     </div>
   </div>
 
-  <!-- Closed Lost -->
+  <!-- Closed Lost row -->
   <div class="clrow">
     <div class="clfrom">
       <div class="cfl">Can exit from</div>
-      <div class="cfc">2 · Attempting (auto day 24)</div>
-      <div class="cfc">3 · Connected (disqualified)</div>
-      <div class="cfc">4 · Meeting Booked (AE disqualifies)</div>
+      <div class="cfc">1 · New Deal (not qualified)</div>
+      <div class="cfc">2 · Qualified Deal (disqualified)</div>
+      <div class="cfc">4 · Biz &amp; Tech Eval (POV failed)</div>
+      <div class="cfc">5 · Commercial Review (commercial break)</div>
+      <div class="cfc">6 · Committed (fell through)</div>
     </div>
     <div class="clarr">↘</div>
-    <div class="sc" id="sc-closed-lost" onclick="openStage('closed-lost')" style="max-width:280px">
+    <div class="sc" id="sc-s8" onclick="openStage('s8')" style="max-width:300px">
       <div class="si" style="border-color:var(--rdb);min-height:auto">
-        <div class="snum">Stage 6</div><div class="sname">Closed Lost</div>
-        <div class="sbadges"><span class="badge bdq">Disqualified</span><span class="badge bsdr">SDR</span></div>
-        <div class="smean">Closed permanently. Re-engagement via new Lead record.</div>
-        <div class="sla sla-g">⟳ Recontact Date → new Lead created (Reactivated)</div>
-        <div class="sstats"><div class="sstat">📋 3 fields</div><div class="sstat">⚡ 1 auto</div></div>
+        <div class="snum">Stage 8</div><div class="sname">Closed Lost</div>
+        <div class="sbadges"><span class="badge bdq">Lost</span><span class="badge bae">AE</span></div>
+        <div class="smean">Loss reason required. Routing logic by reason: Timing → Nurture, Competitor → renewal track.</div>
+        <div class="stbc">⚠️ TBC: Lost reason taxonomy + routing</div>
+        <div class="sstats"><div class="sstat">📋 2 fields</div><div class="sstat">⚡ 1 auto</div></div>
       </div>
     </div>
   </div>
@@ -338,7 +384,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
       <div class="dettitle" id="det-title">Stage Detail</div>
       <button class="detclose" onclick="closeDetail()" aria-label="Close">×</button>
     </div>
-    <div class="dettabs" id="det-tabs">
+    <div class="dettabs">
       <button class="dtab on" onclick="sdt('overview',this)">Overview</button>
       <button class="dtab" onclick="sdt('fields',this)">Required Fields</button>
       <button class="dtab" onclick="sdt('autos',this)">Automations</button>
@@ -346,416 +392,1152 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
     </div>
     <div class="detbody">
 
-      <!-- NEW LEAD -->
-      <div class="dsec on" id="det-new-lead-overview">
+      <!-- S1 UNQUALIFIED DEAL -->
+      <div class="dsec on" id="det-s1-overview">
         <div class="dgrid">
           <div>
-            <div class="dblock"><h4>How a Lead Enters</h4>
-              <ul class="dl"><li>PhantomBuster enrichment run → Lead auto-created</li><li>Inbound form (website calculator, demo booking)</li><li>Event batch import</li><li>SDR manual creation (Sales Navigator)</li></ul>
+            <div class="dblock"><h4>Who creates the deal</h4>
+              <ul class="dl"><li>SDR does the initial call — but does NOT qualify</li><li>AE (or Sasu) does the actual qualification and creates the deal</li><li>Deal auto-created at SQL, or AE creates manually after qualifying the call</li><li>Key lead fields should copy across (pain, source, compelling event)</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Questions (Three Whys)</h4>
+              <ul class="dl"><li>Why do anything? — pain in status quo must be documented</li><li>Why now? — compelling event within 12 months confirmed</li><li>Why Podero? — alignment with key business initiative</li></ul>
             </div>
           </div>
           <div>
-            <div class="dblock"><h4>SDR Checklist Before Moving On</h4>
-              <ul class="dl dlc"><li>Check if contacted before (dedup)</li><li>Verify ICP fit (industry, country, company size)</li><li>Set lead_source + lead_source_detail</li><li>Review enriched contact data — correct title?</li><li>Confirm AE assignment</li></ul>
+            <div class="dblock"><h4>Minimum Entry Bar (enforced)</h4>
+              <ul class="dl dlc"><li>ICP confirmed (company + contact fit)</li><li>Pain in status quo documented (text field — mandatory)</li><li>Compelling event exists (yes/no — mandatory)</li><li>Path to decision makers confirmed</li><li>2/5 SUGAR minimum met</li></ul>
             </div>
+            <div class="anote anote-r" style="margin-top:10px">⚠️ Known problem (Sasu): some AEs create a deal just from having a meeting with anyone at an ICP company. Minimum required fields in HubSpot must prevent this. No fields = no deal creation allowed.</div>
+            <div class="anote anote-b" style="margin-top:8px">💡 Standard deal amount: €82,000 (pre-set). AE adjusts if scope differs. Deals vary significantly in size, duration, and expectations (Beni).</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-new-lead-fields">
-        <div class="fi"><div class="fn2">lead_source</div><div class="ftype">Dropdown</div><div class="fdesc">Mandatory — source category</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">lead_type</div><div class="ftype">Dropdown</div><div class="fdesc">Outbound / Inbound / Event / Referral</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">Contact associated</div><div class="ftype">Association</div><div class="fdesc">Lead must have a Contact linked before advancing</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">ICP confirmed</div><div class="ftype">Checkbox</div><div class="fdesc">SDR verified this company and contact fit ICP criteria</div><div class="freq">REQ</div></div>
+      <div class="dsec" id="det-s1-fields">
+        <div class="fi"><div class="fn2">deal_name</div><div class="ftype">Text</div><div class="fdesc">Company name + deal type. Auto-populated from Lead.</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">deal_amount</div><div class="ftype">Number</div><div class="fdesc">Default €82,000. AE updates if scope differs.</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">deal_source</div><div class="ftype">Dropdown</div><div class="fdesc">Carried from Lead: Outbound Calling / Mailing / LinkedIn / Events / Network / Endios / Inbound Paid / Inbound Organic</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sugar_status_quo</div><div class="ftype">Text</div><div class="fdesc">Pain in status quo — AE synthesis of what problem they are solving</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">compelling_event</div><div class="ftype">Text</div><div class="fdesc">Specific reason to act now — regulatory deadline, contract expiry, market event, etc.</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">compelling_event_date</div><div class="ftype">Date</div><div class="fdesc">Date of compelling event. Must be within 12 months.</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-new-lead-autos">
-        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Inbound lead &gt;24h in New Lead</div><div class="aact">⚠️ Task to SDR: "New inbound lead needs action — [Company]"</div></div>
-        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Outbound lead &gt;5 business days in New Lead</div><div class="aact">⚠️ Task to SDR: "Outbound lead not started — [Company]"</div></div>
+      <div class="dsec" id="det-s1-autos">
+        <div class="ai tn"><div class="atrig"><span class="albl ln">NOTIFY</span>Deal created from SQL</div><div class="aact">⚡ Slack to AE: "New deal created — [Company] · Source: [deal_source] · Pain: [sugar_status_quo]"</div></div>
+        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Deal stuck in New Deal · ⚠️ Days TBC with DLS</div><div class="aact">⚠️ Slack to AE: "Deal stalled — [Company] has been Unqualified for [X] days"</div></div>
       </div>
-      <div class="dsec" id="det-new-lead-exits">
-        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">2 · Attempting</div><div class="ecrit">First call attempt, email, or LinkedIn touchpoint logged in HubSpot</div></div></div>
+      <div class="dsec" id="det-s1-exits">
+        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">2 · Qualified Deal</div><div class="ecrit">3/5 SUGAR (S + U + G minimum) · Compelling event within 12 months · Alignment with key business initiative confirmed</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">8 · Closed Lost</div><div class="ecrit">AE determines deal does not meet qualification criteria after discovery</div></div></div>
       </div>
 
-      <!-- ATTEMPTING -->
-      <div class="dsec" id="det-attempting-overview">
+      <!-- S2 QUALIFIED DEAL -->
+      <div class="dsec" id="det-s2-overview">
         <div class="dgrid">
           <div>
             <div class="dblock"><h4>Entry Criteria</h4>
-              <ul class="dl"><li>First call attempt, email, or LinkedIn touchpoint logged in HubSpot</li></ul>
-            </div><br>
-            <div class="dblock"><h4>SDR Activities</h4>
-              <ul class="dl"><li>Run 21-day / 8-touch outreach cadence</li><li>Log every call and email in HubSpot</li><li>Connect on LinkedIn (Day 7)</li></ul>
+              <ul class="dl"><li>3/5 SUGAR confirmed from New Deal stage</li><li>AE + SE aligned on opportunity</li><li>Mutual Evaluation Plan (MAP) to be co-designed with client</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Question</h4>
+              <ul class="dl"><li>Are the problems big enough to solve?</li><li>Why Podero specifically — vs. alternatives?</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Champion Profile (Sasu)</h4>
+              <ul class="dl"><li>Often in innovation roles: Innovation Manager, Head of Product</li><li>Helps build the point of view internally</li><li>Different from Economic Buyer — EB is who has budget authority</li><li>Positive buying signals: suggests agenda, brings others to calls, completes tasks given to them</li></ul>
             </div>
           </div>
           <div>
-            <div class="anote anote-w">⏱ Max 21 days in Attempting. If no connection → auto-close to Closed Lost (No Response). 7-day no-activity alert fires first as a warning.</div>
+            <div class="dblock"><h4>Q1 2026 Hard Gate Change</h4>
+              <ul class="dl"><li>Directors AND SE must approve before moving to SoW Approval</li><li>Prevents premature POVs on underqualified deals</li><li>AE must request approval — not self-service</li></ul>
+            </div>
+            <div class="anote anote-b" style="margin-top:10px">💡 Buyer signals worth capturing (Sasu): does the customer suggest the agenda? Do they bring others? Do they complete tasks? These nuances indicate influence and commitment — not captured in HubSpot today.</div>
+            <div class="anote anote-w" style="margin-top:8px">⚠️ TBC: Which Directors must approve? Fixed list or any Director-level? (Q8)</div>
+            <div class="anote anote-w" style="margin-top:8px">⚠️ TBC: Are there disqualification triggers if EB intro not done within X days? (Q10)</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-attempting-fields">
-        <div class="fi"><div class="fn2">At least one call logged</div><div class="ftype">Activity</div><div class="fdesc">Required activity before advancing to Connected</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">Contact confirmed</div><div class="ftype">Checkbox</div><div class="fdesc">SDR confirmed this is the right contact at the company</div><div class="freq">REQ</div></div>
+      <div class="dsec" id="det-s2-fields">
+        <div class="fi"><div class="fn2">sugar_urgency</div><div class="ftype">Text</div><div class="fdesc">Why now — compelling event documented in SUGAARR format</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sugar_gap</div><div class="ftype">Text</div><div class="fdesc">Gap between status quo and target state — quantified if possible</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sugar_stakeholders</div><div class="ftype">Text</div><div class="fdesc">Champion, Economic Buyer, Vetoer, Evaluator, User — all mapped</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sugar_alternatives</div><div class="ftype">Text</div><div class="fdesc">What else are they considering? Competitor / build in-house / do nothing?</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">economic_buyer_intro_done</div><div class="ftype">Checkbox</div><div class="fdesc">EB intro completed. No EB, no deal — absolute rule.</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-attempting-autos">
-        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;7 days no activity</div><div class="aact">⚠️ Task to SDR: "No activity in 7 days — [Lead name]"</div></div>
-        <div class="ai tc"><div class="atrig"><span class="albl lc">AUTO-CLOSE</span>&gt;21 days no connection</div><div class="aact">Auto-close to Closed Lost · Reason: No Response · SDR notified via task</div></div>
+      <div class="dsec" id="det-s2-autos">
+        <div class="ai ts"><div class="atrig"><span class="albl ls">ASSIGN</span>Deal enters Qualified Deal</div><div class="aact">⚡ Auto-assign SE · Create HubSpot task: "Book EB intro — [Company]"</div></div>
+        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Deal stuck in Qualified Deal · ⚠️ Days TBC with DLS</div><div class="aact">⚠️ Slack to AE: "Qualified Deal stalled — [Company]"</div></div>
+        <div class="ai ta"><div class="atrig"><span class="albl la">ESCALATE</span>+7 days after first alert · ⚠️ Days TBC</div><div class="aact">⚠️ Slack to Director: "Escalation — [Company] deal stalled [X] days"</div></div>
       </div>
-      <div class="dsec" id="det-attempting-exits">
-        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">3 · Connected</div><div class="ecrit">Live conversation happened (call answered or meaningful reply)</div></div></div>
-        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">6 · Closed Lost</div><div class="ecrit">21-day cadence exhausted with no response (automatic)</div></div></div>
+      <div class="dsec" id="det-s2-exits">
+        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">3 · SoW Approval</div><div class="ecrit">4/5 SUGAR · EB intro done · MAP co-designed · SE tech qual call completed · SE approves POV deliverable · Directors + SE approve move</div><div class="egate">⚠️ Hard Gate — Director + SE approval required (Q1 2026 rule)</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">8 · Closed Lost</div><div class="ecrit">Deal disqualified after further discovery or approval denied</div></div></div>
       </div>
 
-      <!-- CONNECTED -->
-      <div class="dsec" id="det-connected-overview">
+      <!-- S3 SOW APPROVAL -->
+      <div class="dsec" id="det-s3-overview">
         <div class="dgrid">
           <div>
-            <div class="dblock"><h4>SDR Activities</h4>
-              <ul class="dl"><li>Qualify: ICP criteria, pain, compelling event</li><li>Log call via HubSpot Calling → auto-transcription → Claude SDR template (Phase 3)</li><li>Determine: proceed to meeting, or disqualify</li></ul>
-            </div><br>
-            <div class="dblock"><h4>What Is a Compelling Event?</h4>
-              <ul class="dl"><li>Regulatory deadline — must comply by a specific date</li><li>Contract expiry — current solution ends in 6 months</li><li>Market entry — launching new trading territory by a date</li><li>Budget cycle — approved budget, use it this year</li><li>Competitive pressure — rival just launched, must respond</li><li>ESG reporting deadline — board committed to year-end metrics</li></ul>
+            <div class="dblock"><h4>Entry Criteria</h4>
+              <ul class="dl"><li>SE tech qual call completed and documented</li><li>Directors + SE have approved move from Qualified Deal</li><li>AE prepares Statement of Work (SoW)</li><li>Purple Sheet completed by AE + SE</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Question</h4>
+              <ul class="dl"><li>Do we understand the deal well enough to invest heavily in a POV?</li></ul>
             </div>
           </div>
           <div>
-            <div class="anote anote-b">📞 Call transcription (Phase 3 build) will auto-populate pain_identified from the transcript. Until then: SDR fills it manually after the call.<br><br>⏱ Target: meeting booked within 48h of connecting. &gt;5 days → alert fires.</div>
-            <div class="anote anote-w" style="margin-top:10px">No compelling event? Close Lost and set a recontact date. An interested contact with no urgency will stall indefinitely.</div>
+            <div class="anote anote-r">🔴 HARD GATE — Nothing moves without Chris approving SoW + Purple Sheet. Chris must physically approve before deal enters Biz &amp; Tech Eval. No exceptions.</div>
+            <div class="anote anote-w" style="margin-top:10px">⚠️ Stage purpose debated (Sasu, Apr 2026): Sasu was confused about what this stage is for. She thought it was about waiting for the EB to accept a meeting — not Chris approving scope. She suggested it may make more sense inside Biz &amp; Tech Eval. This needs to be resolved before building.</div>
+            <div class="anote anote-w" style="margin-top:8px">⚠️ TBC: What is the Purple Sheet? Fields, location (HubSpot vs Google Doc), who fills it in (Q7)</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-connected-fields">
-        <div class="fi"><div class="fn2">pain_identified</div><div class="ftype">Text</div><div class="fdesc">1–2 sentence synthesis of the pain the contact expressed. Auto-populated from call transcript (Phase 3). Forces SDR to distil the pain into AE-readable format.</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">compelling_event_exists</div><div class="ftype">Yes / No</div><div class="fdesc">Is there a specific reason to act within 12 months? If No → consider Closed Lost.</div><div class="freq">REQ</div></div>
-        <div class="anote anote-b" style="margin-top:12px">These two properties do double duty: they gate the stage transition AND give the AE the qualifying context in structured form — visible on the record without reading through notes.</div>
+      <div class="dsec" id="det-s3-fields">
+        <div class="fi"><div class="fn2">sow_approved</div><div class="ftype">Checkbox</div><div class="fdesc">Chris has approved the Statement of Work</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">purple_sheet_complete</div><div class="ftype">Checkbox</div><div class="fdesc">Purple Sheet completed and attached — hard gate field</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">se_tech_qual_notes</div><div class="ftype">Text</div><div class="fdesc">SE technical qualification call outcome documented</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-connected-autos">
-        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;5 days in Connected with no meeting booked</div><div class="aact">⚠️ Task to SDR: "No meeting booked — [Lead name]"</div></div>
-        <div class="ai tsum"><div class="atrig"><span class="albl lsum">AUTO-SUMMARY</span>Stage entry (Phase 2 build)</div><div class="aact">🤖 Pulls all lead context + activity timeline → Claude generates "Outreach Summary" note → pinned to Lead record. Covers: what was tried, what connected, qualifying signals.</div></div>
+      <div class="dsec" id="det-s3-autos">
+        <div class="ai tn"><div class="atrig"><span class="albl ln">NOTIFY</span>Deal enters SoW Approval</div><div class="aact">⚡ Notify Chris with SoW link: "[Company] SoW ready for approval — [link]"</div></div>
+        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>SoW pending Chris approval for &gt;3 days</div><div class="aact">⚠️ Reminder to Chris + AE: "SoW awaiting approval — [Company]"</div></div>
       </div>
-      <div class="dsec" id="det-connected-exits">
-        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">4 · Meeting Booked</div><div class="ecrit">Meeting scheduled with AE — pain and compelling event confirmed</div></div></div>
-        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">6 · Closed Lost</div><div class="ecrit">Contact disqualified after conversation (wrong person, no ICP fit, no compelling event)</div></div></div>
+      <div class="dsec" id="det-s3-exits">
+        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">4 · Biz &amp; Tech Eval</div><div class="ecrit">Chris approves SoW + Purple Sheet — POV/POC phase begins</div><div class="egate">⚠️ Cannot move without Chris approval — no exceptions</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--or)">↩</div><div><div class="ename" style="color:var(--or)">2 · Qualified Deal</div><div class="ecrit">SoW rejected by Chris — deal returns to Qualified Deal with rejection notes</div></div></div>
       </div>
 
-      <!-- MEETING BOOKED -->
-      <div class="dsec" id="det-meeting-booked-overview">
+      <!-- S4 BIZ TECH EVAL -->
+      <div class="dsec" id="det-s4-overview">
         <div class="dgrid">
           <div>
-            <div class="dblock"><h4>Entry Paths</h4>
-              <ul class="dl"><li>SDR-assisted: SDR books meeting after qualifying connection</li><li>Inbound self-book: Contact books via HubSpot Meetings → stage auto-set, SDR assigned, AE notified</li></ul>
-            </div><br>
-            <div class="dblock"><h4>AE Prep Before the Call</h4>
-              <ul class="dl dlc"><li>Review pain_identified on Lead record</li><li>Review auto-summary note (Phase 2)</li><li>Confirm calendar event + meeting link</li></ul>
+            <div class="dblock"><h4>Two Parallel Tracks</h4>
+              <ul class="dl"><li><strong>Business track:</strong> ROI business case, stakeholder alignment, EB relationship deepened</li><li><strong>Technical track:</strong> POC/POV delivery, integration review, SE sign-off on outcome</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Question</h4>
+              <ul class="dl"><li>Have we proven our value?</li><li>Does the EB see the ROI clearly?</li></ul>
             </div>
           </div>
           <div>
-            <div class="anote anote-b">🤖 <strong>Auto-summary fires on stage entry (Phase 2).</strong> Claude pulls full lead history and generates an AE handoff brief. No manual SDR prep note required — the system creates it.<br><br>Replaces the "SDR qualifying notes" manual step entirely.</div>
+            <div class="dblock"><h4>Exit Gate</h4>
+              <ul class="dl dlc"><li>5/5 SUGAR fully documented</li><li>Decision criteria documented and met</li><li>SoW agreed with client</li><li>EB meeting completed</li><li>Indicative investment range tabled</li></ul>
+            </div>
+            <div class="anote anote-w" style="margin-top:10px">⚠️ TBC: SLA days for this stage before alert fires (Q3)</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-meeting-booked-fields">
-        <div class="fi"><div class="fn2">meeting_link</div><div class="ftype">Text</div><div class="fdesc">HubSpot Meetings / Google Meet URL for the discovery call</div></div>
-        <div class="anote anote-b" style="margin-top:12px">Note: "AE confirmed in calendar" and "SDR prep notes" cannot be enforced as HubSpot stage gates — these are activity types, not properties. The auto-summary (Phase 2) handles the brief automatically. Calendar confirmation is process, not a gate.</div>
+      <div class="dsec" id="det-s4-fields">
+        <div class="fi"><div class="fn2">sugar_roi</div><div class="ftype">Text</div><div class="fdesc">Quantified ROI — kWh saved, cost avoided, market share gained. Must be client-verified.</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sugar_roadmap</div><div class="ftype">Text</div><div class="fdesc">Clear next steps agreed by both sides — the Mutual Action Plan outcome</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">pov_outcome</div><div class="ftype">Text</div><div class="fdesc">POV/POC result — what was demonstrated and customer verdict</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">decision_criteria</div><div class="ftype">Text</div><div class="fdesc">Client's documented criteria for making their buying decision</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">eb_meeting_done</div><div class="ftype">Checkbox</div><div class="fdesc">Economic Buyer meeting completed during eval phase</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-meeting-booked-autos">
-        <div class="ai tt"><div class="atrig"><span class="albl lt">TASK</span>Stage entry</div><div class="aact">📅 Task to AE: "Discovery call with [Name] at [Company] — [date] — [link]"</div></div>
-        <div class="ai ts"><div class="atrig"><span class="albl ls">SLACK</span>Stage entry</div><div class="aact">Slack to AE: same message as task</div></div>
-        <div class="ai tt"><div class="atrig"><span class="albl lt">TASK</span>Stage entry</div><div class="aact">SDR task: "Prep AE brief for [Company] — review auto-summary note"</div></div>
-        <div class="ai tsum"><div class="atrig"><span class="albl lsum">AUTO-SUMMARY</span>Stage entry (Phase 2 build)</div><div class="aact">🤖 Pulls all lead context + activity timeline → Claude generates "AE Handoff Brief" note → pinned to Lead record. Covers: who they are, pain expressed, compelling event, outreach history, agreed next step.</div></div>
-        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;14 days no SQL advancement</div><div class="aact">⚠️ Alert to SDR + AE: "Meeting booked but not yet qualified — [Company]"</div></div>
+      <div class="dsec" id="det-s4-autos">
+        <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Deal stuck in Biz &amp; Tech Eval · ⚠️ Days TBC</div><div class="aact">⚠️ Slack to AE: "Eval stalled — [Company] has been in Biz &amp; Tech Eval for [X] days"</div></div>
+        <div class="ai tsum"><div class="atrig"><span class="albl lsum">AI SUMMARY</span>Call transcription → SUGAARR note</div><div class="aact">🤖 AE discovery/demo calls → Whisper transcription → Claude applies full SUGAARR template → Note pushed to HubSpot deal → Slack to AE with link</div></div>
       </div>
-      <div class="dsec" id="det-meeting-booked-exits">
-        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">5 · SQL</div><div class="ecrit">AE confirms real opportunity after discovery call — creates Unqualified Deal</div></div></div>
-        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">6 · Closed Lost</div><div class="ecrit">AE disqualifies after meeting — no real opportunity</div></div></div>
+      <div class="dsec" id="det-s4-exits">
+        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">5 · Commercial Review</div><div class="ecrit">5/5 SUGAR · EB meeting done · Indicative investment range tabled · Decision criteria met · POV complete</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">8 · Closed Lost</div><div class="ecrit">POV failed, deal disqualified, or AE + SE determined no path forward</div></div></div>
       </div>
 
-      <!-- SQL -->
-      <div class="dsec" id="det-sql-overview">
+      <!-- S5 COMMERCIAL REVIEW -->
+      <div class="dsec" id="det-s5-overview">
         <div class="dgrid">
           <div>
-            <div class="dblock"><h4>SQL Criteria — All Required (needs AE sign-off)</h4>
-              <ul class="dl dlc"><li>Contact is ICP (right company, country, company size)</li><li>Pain clearly identified and articulated</li><li>Compelling event exists within 12 months</li><li>Path to Economic Buyer identified (or EB met)</li><li>Contact is actively engaged (responded, showed interest)</li><li>AE has had at minimum one live conversation</li></ul>
+            <div class="dblock"><h4>Entry Criteria</h4>
+              <ul class="dl"><li>POV complete and client has seen value</li><li>EB meeting completed</li><li>Indicative investment range tabled</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Question</h4>
+              <ul class="dl"><li>Will they agree on how to buy?</li></ul>
             </div>
           </div>
           <div>
-            <div class="dblock"><h4>What Happens at SQL</h4>
-              <ul class="dl"><li>AE creates Unqualified Deal in Deal Pipeline</li><li>Deal linked to the Lead record</li><li>lead_source + lead_source_detail carried over to Deal (attribution preserved)</li><li>Lead stays in SQL stage — NOT deleted</li></ul>
+            <div class="dblock"><h4>Pricing Discretion</h4>
+              <ul class="dl"><li>AE: up to 20% off rate card — no approval needed</li><li>20–30% discount: Director approval required</li><li>30%+ discount: Global Head of Sales / CEO approval required</li></ul>
             </div>
-            <div class="anote anote-w" style="margin-top:10px">AE edge case: AEs can create a Deal directly without an SDR Lead record — acceptable as long as required Deal fields are filled. Tracked via deal_source = Direct AE.</div>
+            <div class="anote anote-b" style="margin-top:10px">📄 Contract: 3-year terms are standard. AE confirms signer name + signature date before advancing.</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-sql-fields">
-        <div style="color:var(--tm);font-size:13px;padding:8px 0">No specific Lead fields required at SQL. AE creates Unqualified Deal in Deal Pipeline with required fields filled there. Lead source attribution is carried over automatically.</div>
+      <div class="dsec" id="det-s5-fields">
+        <div class="fi"><div class="fn2">sign_date</div><div class="ftype">Date</div><div class="fdesc">Confirmed signature date provided by prospect</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">signer_name</div><div class="ftype">Text</div><div class="fdesc">Name + title of person who will sign the contract</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">contract_terms</div><div class="ftype">Text</div><div class="fdesc">Agreed contract structure: term length, payment schedule, key conditions</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">discount_pct</div><div class="ftype">Number</div><div class="fdesc">% off rate card — triggers approval workflow if &gt;20%</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-sql-autos">
-        <div style="color:var(--tm);font-size:13px;padding:8px 0">No automations at SQL stage. AE manually creates Unqualified Deal. Deal Pipeline automations take over. See Flows → AE Handoff.</div>
+      <div class="dsec" id="det-s5-autos">
+        <div class="ai tn"><div class="atrig"><span class="albl la">ALERT</span>Discount &gt;20% on deal</div><div class="aact">⚠️ Alert to Director: "[Company] deal has [X]% discount — approval required before advancing"</div></div>
+        <div class="ai tn"><div class="atrig"><span class="albl la">ALERT</span>Discount &gt;30% on deal</div><div class="aact">⚠️ Alert to GHoS / CEO: "[Company] deal has [X]% discount — executive approval required"</div></div>
       </div>
-      <div class="dsec" id="det-sql-exits">
-        <div class="ei"><div class="earr" style="color:var(--pu)">↗</div><div><div class="ename" style="color:#6d28d9">Deal Pipeline — Unqualified Deal</div><div class="ecrit">AE creates Unqualified Deal linked to this Lead record. Lead source + SDR history carried over.</div></div></div>
+      <div class="dsec" id="det-s5-exits">
+        <div class="ei"><div class="earr" style="color:var(--ac)">→</div><div><div class="ename" style="color:var(--ac)">6 · Committed</div><div class="ecrit">Sign date confirmed · Signer confirmed · Contract terms agreed · Pricing approval chain followed</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">8 · Closed Lost</div><div class="ecrit">Commercial terms not agreed, deal falls through</div></div></div>
       </div>
 
-      <!-- CLOSED LOST -->
-      <div class="dsec" id="det-closed-lost-overview">
+      <!-- S6 COMMIT -->
+      <div class="dsec" id="det-s6-overview">
         <div class="dgrid">
           <div>
-            <div class="dblock"><h4>Closed Lost Reasons (needs SDR sign-off)</h4>
-              <ul class="dl dlc"><li>Not ICP (wrong industry / country / size)</li><li>Wrong person — can't reach DM</li><li>No response — cadence exhausted</li><li>Not interested — too early (6–12 months)</li><li>Not interested — not a priority</li><li>Do not contact</li><li>Already has a solution (competitor / in-house)</li><li>No compelling event</li><li>Budget unavailable this cycle</li><li>Bad data (wrong contact / company changed)</li></ul>
+            <div class="dblock"><h4>Committed — Precise Definition (Sasu)</h4>
+              <ul class="dl"><li><strong>Verbal YES from the Economic Buyer</strong> — not the champion. EB must confirm directly.</li><li><strong>Known timeline to signature</strong> — a specific date or week range agreed</li><li><strong>Established next steps</strong> — clear path from here to signature mapped out</li><li>Sasu: "super strict" — deals often stay in Commercial Review a long time before this</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Seminal Question</h4>
+              <ul class="dl"><li>Have we removed all blockers to signature?</li></ul>
             </div>
           </div>
           <div>
-            <div class="anote anote-r"><strong>No backwards movement.</strong> Once Closed Lost, it stays closed. The record is permanent history.<br><br>Re-engagement = a NEW Lead record created for the same contact, tagged as Reactivated and linked to this original record.</div>
-            <div class="anote anote-w" style="margin-top:10px">Draft reason list — Christian K + Mo to review and confirm based on their experience in the market.</div>
+            <div class="anote anote-g">✅ Committed definition confirmed by Sasu (Apr 2026): verbal YES from EB + known timeline + next steps mapped. Not just a sign date — the EB must specifically say yes.</div>
+            <div class="anote anote-w" style="margin-top:10px">⚠️ TBC: If sign date passes with no signature — what happens? Auto-flag, AE alert, or move to Closed Lost? This edge case still unresolved.</div>
+            <div class="anote anote-w" style="margin-top:8px">⚠️ TBC: What if the deal goes silent after entering Committed? How many days before action is taken?</div>
           </div>
         </div>
       </div>
-      <div class="dsec" id="det-closed-lost-fields">
-        <div class="fi"><div class="fn2">closed_lost_reason</div><div class="ftype">Dropdown</div><div class="fdesc">Required on close — must pick one of 10 reasons</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">recontact_date</div><div class="ftype">Date</div><div class="fdesc">Mandatory — when to re-engage (even if 12+ months out). Triggers new Lead creation on date reached.</div><div class="freq">REQ</div></div>
-        <div class="fi"><div class="fn2">recontact_trigger</div><div class="ftype">Text</div><div class="fdesc">Optional context: "when new energy trading regulation passes"</div></div>
+      <div class="dsec" id="det-s6-fields">
+        <div class="fi"><div class="fn2">vendor_of_choice_confirmed</div><div class="ftype">Checkbox</div><div class="fdesc">Prospect has verbally/written stated Podero is their chosen vendor</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">sign_date</div><div class="ftype">Date</div><div class="fdesc">Sign date stated by prospect — must be confirmed here</div><div class="freq">REQ</div></div>
       </div>
-      <div class="dsec" id="det-closed-lost-autos">
-        <div class="ai tr"><div class="atrig"><span class="albl lr">RE-ENGAGE</span>Recontact Date reached</div><div class="aact">🔄 New Lead created for same contact · tagged is_reactivated = true · linked to this Closed Lost record · SDR task fires: "Time to re-engage [Company] — original reason: [reason] — [link]"</div></div>
+      <div class="dsec" id="det-s6-autos">
+        <div class="ai ts"><div class="atrig"><span class="albl ls">NOTIFY</span>Deal enters Committed</div><div class="aact">⚡ Slack to sales leadership: "🔥 [Company] is now Committed — sign date [date]"</div></div>
       </div>
-      <div class="dsec" id="det-closed-lost-exits">
-        <div class="ei"><div class="earr" style="color:var(--gr)">↗</div><div><div class="ename" style="color:var(--gr)">New Lead — tagged Reactivated</div><div class="ecrit">Recontact Date reached → system creates a fresh Lead record for the same contact, linked to this one. Pipeline restarts from New Lead. This record stays Closed Lost permanently.</div></div></div>
+      <div class="dsec" id="det-s6-exits">
+        <div class="ei"><div class="earr" style="color:var(--gr)">→</div><div><div class="ename" style="color:var(--gr)">7 · Closed Won</div><div class="ecrit">Contract signed — move to Closed Won immediately</div></div></div>
+        <div class="ei"><div class="earr" style="color:var(--rd)">↓</div><div><div class="ename" style="color:var(--rd)">8 · Closed Lost</div><div class="ecrit">Deal falls through after commit (rare — escalate to leadership)</div></div></div>
       </div>
 
-    </div>
-  </div>
-</div>
+      <!-- S7 CLOSED WON -->
+      <div class="dsec" id="det-s7-overview">
+        <div class="dgrid">
+          <div>
+            <div class="dblock"><h4>Post-Close Actions (All Required)</h4>
+              <ul class="dl dlc"><li>Upload billing details to HubSpot</li><li>Fill in onboarding deck for CSM team</li><li>Document full SUGAARR in handover notes for CSM</li><li>Auto-create CSM onboarding task</li><li>Claude generates SUGAARR handover summary via Zapier</li></ul>
+            </div>
+          </div>
+          <div>
+            <div class="dblock"><h4>Expansion Questions</h4>
+              <ul class="dl"><li>Why did they buy? — capture for win analysis</li><li>Would they do a case study?</li><li>What is the expansion plan?</li></ul>
+            </div>
+            <div class="anote anote-g" style="margin-top:10px">✅ Post-Closed Won: CSM owns everything. AE hands off formally with onboarding deck + SUGAARR notes.</div>
+          </div>
+        </div>
+      </div>
+      <div class="dsec" id="det-s7-fields">
+        <div class="fi"><div class="fn2">billing_details_uploaded</div><div class="ftype">Checkbox</div><div class="fdesc">Billing details uploaded to HubSpot — required before CSM handoff</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">onboarding_deck_complete</div><div class="ftype">Checkbox</div><div class="fdesc">Onboarding deck filled in for CSM team</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">csm_handover_notes</div><div class="ftype">Text</div><div class="fdesc">Full SUGAARR documented for CSM — auto-generated by Claude (Zapier)</div><div class="freq">REQ</div></div>
+      </div>
+      <div class="dsec" id="det-s7-autos">
+        <div class="ai tt"><div class="atrig"><span class="albl lt">TASK</span>Deal enters Closed Won</div><div class="aact">⚡ Auto-create HubSpot task for AE: "Complete onboarding deck + upload billing details — [Company]"</div></div>
+        <div class="ai tsum"><div class="atrig"><span class="albl lsum">AI SUMMARY</span>Deal enters Closed Won → Zapier</div><div class="aact">🤖 Pull full SUGAARR from deal properties + notes → Claude generates handover summary → Push to HubSpot as pinned note → Slack AE + CSM</div></div>
+      </div>
+      <div class="dsec" id="det-s7-exits">
+        <div class="ei"><div class="earr" style="color:var(--pu)">↗</div><div><div class="ename" style="color:var(--pu)">CSM Handoff</div><div class="ecrit">Onboarding deck complete + billing details uploaded + SUGAARR handover note generated</div></div></div>
+      </div>
 
+      <!-- S8 CLOSED LOST -->
+      <div class="dsec" id="det-s8-overview">
+        <div class="dgrid">
+          <div>
+            <div class="dblock"><h4>Entry — Required Fields</h4>
+              <ul class="dl dlc"><li>AE selects closed_lost_reason from dropdown (mandatory)</li><li>AE adds optional free-text detail</li><li>Routing logic fires based on reason</li></ul>
+            </div>
+            <br>
+            <div class="dblock"><h4>Proposed Lost Reason Taxonomy</h4>
+              <ul class="dl"><li>Timing (not now)</li><li>Budget (no funds approved)</li><li>Competitor (chose another vendor)</li><li>No compelling event (urgency lost)</li><li>No Economic Buyer (couldn't get EB access)</li><li>Internal priority shift</li><li>Technical fit</li><li>Other</li></ul>
+            </div>
+          </div>
+          <div>
+            <div class="anote anote-w">⚠️ TBC (Q4): Final taxonomy of Closed Lost reason values must be confirmed with DLS. Proposed list is a starting point.</div>
+            <div class="anote anote-w" style="margin-top:8px">⚠️ TBC (Q5): Reactivation paths — does re-engagement differ by reason?<br><br>Proposed: Timing → Nurture track (recontact date set) / Budget → Re-engage campaign / Competitor → Renewal tracking + re-engage at renewal / Other → Manual AE follow-up task</div>
+          </div>
+        </div>
+      </div>
+      <div class="dsec" id="det-s8-fields">
+        <div class="fi"><div class="fn2">closed_lost_reason</div><div class="ftype">Dropdown</div><div class="fdesc">Mandatory — must select before deal can be closed. ⚠️ Final taxonomy TBC with DLS.</div><div class="freq">REQ</div></div>
+        <div class="fi"><div class="fn2">closed_lost_detail</div><div class="ftype">Text</div><div class="fdesc">Optional free-text detail on loss reason</div><div class="fdesc" style="color:var(--or)">Optional</div></div>
+      </div>
+      <div class="dsec" id="det-s8-autos">
+        <div class="ai tr"><div class="atrig"><span class="albl lr" style="background:#fce7f3;color:#9d174d">ROUTE</span>Deal → Closed Lost · Reason = Timing</div><div class="aact">⚡ Nurture track: set recontact_date, create AE task at recontact date. ⚠️ Routing logic TBC with DLS.</div></div>
+      </div>
+      <div class="dsec" id="det-s8-exits">
+        <div class="ei"><div class="earr" style="color:var(--or)">⟳</div><div><div class="ename" style="color:var(--or)">Reactivation → New Deal</div><div class="ecrit">Recontact Date reached → AE task fires → if re-engaged → new deal created tagged "Reactivated", linked to original. ⚠️ Logic TBC (Q5).</div></div></div>
+      </div>
 
-<!-- ══ CADENCE VIEW ═══════════════════════════════════════════ -->
-<div id="view-cadence" class="view">
-  <div class="sl">21-Day Outreach Cadence</div>
-  <div class="cadwrap">
-    <div class="cadsumrow">
-      <div class="csitem"><span style="color:var(--gr)">📞</span>4 calls</div>
-      <div class="csitem"><span style="color:var(--ac)">✉️</span>3 emails</div>
-      <div class="csitem"><span style="color:var(--pu)">🔗</span>1 LinkedIn</div>
-      <div class="csitem">👆 8 total touches</div>
-      <div class="csitem">📅 21 days</div>
-    </div>
-    <div class="cadhdr"><span>Day</span><span>Channel</span><span>Action</span></div>
-    <div class="cadrow"><div class="cday">Day 1</div><div class="cch ccall">📞 Call</div><div class="cact">First attempt — intro, ICP qualify, pain hypothesis</div></div>
-    <div class="cadrow"><div class="cday">Day 1</div><div class="cch cemail">✉️ Email</div><div class="cact">Intro email — personalised to ICP + pain hypothesis</div></div>
-    <div class="cadrow"><div class="cday">Day 3</div><div class="cch ccall">📞 Call</div><div class="cact">Follow-up call attempt</div></div>
-    <div class="cadrow"><div class="cday">Day 5</div><div class="cch cemail">✉️ Email</div><div class="cact">Value prop email — energy savings, market share angle</div></div>
-    <div class="cadrow"><div class="cday">Day 7</div><div class="cch cli">🔗 LinkedIn</div><div class="cact">Connection request + short personalised note</div></div>
-    <div class="cadrow"><div class="cday">Day 10</div><div class="cch ccall">📞 Call</div><div class="cact">Third call attempt — reference previous touches</div></div>
-    <div class="cadrow"><div class="cday">Day 14</div><div class="cch cemail">✉️ Email</div><div class="cact">Case study / social proof — relevant customer story</div></div>
-    <div class="cadrow"><div class="cday">Day 17</div><div class="cch ccall">📞 Call</div><div class="cact">Final call attempt</div></div>
-    <div class="cadrow"><div class="cday">Day 21</div><div class="cch cemail">✉️ Email</div><div class="cact">Breakup email — "closing your file, reach out when timing is right"</div></div>
-    <div class="cadrow"><div class="cday">Day 24</div><div class="cch cauto">⚡ Auto</div><div class="cact" style="color:var(--rd);font-weight:500">Auto-close to Closed Lost — No Response (if still no reply)</div></div>
-    <div class="cadnote">⚠️ <strong>Needs SDR sign-off.</strong> Best-practice B2B enterprise (4 calls, 3 emails, 1 LinkedIn over 21 days). Enterprise energy is relationship-heavy — confirm with Christian K + Mo.<br><br>⚠️ <strong>Seat constraint:</strong> HubSpot email sequences require Sales Hub Professional (~€90/user/month). If SDRs are on Core seats, cadence runs as Zapier-triggered manual tasks. Decision pending from Sasu.</div>
-  </div>
-</div>
+    </div><!-- /detbody -->
+  </div><!-- /det -->
+</div><!-- /view-pipeline -->
 
-
-<!-- ══ AUTOMATIONS VIEW ═══════════════════════════════════════ -->
+<!-- ══ AUTOMATIONS VIEW ══════════════════════════════════════════ -->
 <div id="view-automations" class="view">
-  <div class="sl">All Automations by Stage</div>
+  <div class="sl" style="margin-bottom:18px">All Deal Automations · 10 planned</div>
   <div class="autogrid">
     <div class="acard">
-      <div class="acstage st1">Stage 1 — New Lead</div>
-      <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Inbound lead &gt;24h in stage</div><div class="aact">⚠️ Task to SDR: "New inbound lead needs action — [Company]"</div></div>
-      <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>Outbound lead &gt;5 business days</div><div class="aact">⚠️ Task to SDR: "Outbound lead not started — [Company]"</div></div>
+      <div class="acstage st1">Stage 1 — New Deal</div>
+      <div class="actrig">⚡ Trigger: Lead → SQL → Deal created</div>
+      <div class="acact"><strong>Deal creation alert</strong><br>Slack to AE with full lead summary: company, source, pain, compelling event.</div>
+      <span class="acstatus as-build">To Build</span>
     </div>
     <div class="acard">
-      <div class="acstage st2">Stage 2 — Attempting</div>
-      <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;7 days no activity</div><div class="aact">⚠️ Task to SDR: "No activity in 7 days — [Lead name]"</div></div>
-      <div class="ai tc"><div class="atrig"><span class="albl lc">AUTO-CLOSE</span>&gt;21 days no connection</div><div class="aact">Auto-close to Closed Lost · Reason: No Response · SDR task notification</div></div>
+      <div class="acstage st2">Stage 2 — Qualified Deal</div>
+      <div class="actrig">⚡ Trigger: Deal enters Qualified Deal</div>
+      <div class="acact"><strong>SE assignment</strong><br>Auto-assign SE to deal. Create HubSpot task: "Book EB intro — [Company]".</div>
+      <span class="acstatus as-build">To Build</span>
     </div>
     <div class="acard">
-      <div class="acstage st3">Stage 3 — Connected</div>
-      <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;5 days no meeting booked</div><div class="aact">⚠️ Task to SDR: "No meeting booked — [Lead name]"</div></div>
-      <div class="ai tsum"><div class="atrig"><span class="albl lsum">AUTO-SUMMARY</span>Stage entry · Phase 2</div><div class="aact">🤖 Claude generates "Outreach Summary" note — what was tried, what connected, qualifying signals</div></div>
+      <div class="acstage st2">Stage 2 — Qualified Deal</div>
+      <div class="actrig">⚡ Trigger: Deal enters Qualified Deal</div>
+      <div class="acact"><strong>EB intro task</strong><br>HubSpot task fires: "Book Economic Buyer introduction — [Company]".</div>
+      <span class="acstatus as-build">To Build</span>
     </div>
     <div class="acard">
-      <div class="acstage st4">Stage 4 — Meeting Booked</div>
-      <div class="ai tt"><div class="atrig"><span class="albl lt">TASK</span>Stage entry</div><div class="aact">📅 Task to AE: "Discovery call with [Name] at [Company] — [date] — [link]"</div></div>
-      <div class="ai ts"><div class="atrig"><span class="albl ls">SLACK</span>Stage entry</div><div class="aact">Slack to AE: same message as task above</div></div>
-      <div class="ai tt"><div class="atrig"><span class="albl lt">TASK</span>Stage entry</div><div class="aact">SDR task: "Prep AE brief for [Company] — review auto-summary note"</div></div>
-      <div class="ai tsum"><div class="atrig"><span class="albl lsum">AUTO-SUMMARY</span>Stage entry · Phase 2</div><div class="aact">🤖 Claude generates "AE Handoff Brief" — who they are, pain, compelling event, outreach history, next step</div></div>
-      <div class="ai ta"><div class="atrig"><span class="albl la">ALERT</span>&gt;14 days no SQL advancement</div><div class="aact">⚠️ Alert to SDR + AE: meeting booked but not yet qualified</div></div>
+      <div class="acstage st3">Stage 3 — SoW Approval</div>
+      <div class="actrig">⚡ Trigger: Deal enters SoW Approval</div>
+      <div class="acact"><strong>SOW approval request</strong><br>Notify Chris with SoW link: "[Company] SoW ready for your approval".</div>
+      <span class="acstatus as-build">To Build</span>
     </div>
     <div class="acard">
-      <div class="acstage st5">Stage 5 — SQL</div>
-      <div style="color:var(--td);font-size:12px;padding:6px 0">No automations at SQL. AE manually creates Unqualified Deal. Deal Pipeline automations take over.</div>
+      <div class="acstage st5">Stage 5 — Commercial Review</div>
+      <div class="actrig">⚡ Trigger: discount_pct &gt; threshold</div>
+      <div class="acact"><strong>Pricing approval alert</strong><br>&gt;20%: alert Director. &gt;30%: alert GHoS / CEO. Deal cannot advance until approved.</div>
+      <span class="acstatus as-build">To Build</span>
     </div>
     <div class="acard">
-      <div class="acstage st6">Stage 6 — Closed Lost</div>
-      <div class="ai tr"><div class="atrig"><span class="albl lr">RE-ENGAGE</span>Recontact Date reached</div><div class="aact">🔄 New Lead created · tagged Reactivated · linked to original · SDR task with full context</div></div>
+      <div class="acstage st6">Stage 6 — Committed</div>
+      <div class="actrig">⚡ Trigger: Deal enters Committed</div>
+      <div class="acact"><strong>Committed Slack ping</strong><br>Notify sales leadership: "🔥 [Company] is now Committed — sign date [date]".</div>
+      <span class="acstatus as-build">To Build</span>
+    </div>
+    <div class="acard">
+      <div class="acstage st7">Stage 7 — Closed Won</div>
+      <div class="actrig">⚡ Trigger: Deal enters Closed Won</div>
+      <div class="acact"><strong>CSM handoff task</strong><br>Auto-create onboarding task for AE. Notify CSM team of new client.</div>
+      <span class="acstatus as-build">To Build</span>
+    </div>
+    <div class="acard">
+      <div class="acstage st7">Stage 7 — Closed Won</div>
+      <div class="actrig">⚡ Trigger: Deal enters Closed Won → Zapier</div>
+      <div class="acact"><strong>Claude deal summary</strong><br>Pull SUGAARR → Claude generates handover summary → Push to HubSpot as pinned note → Slack to AE + CSM.</div>
+      <span class="acstatus as-build">To Build</span>
+    </div>
+    <div class="acard" style="border-color:var(--orb)">
+      <div class="acstage st8">All Active Stages</div>
+      <div class="actrig">⚡ Trigger: Deal in stage &gt; X days · <strong style="color:var(--or)">⚠️ Days TBC</strong></div>
+      <div class="acact"><strong>SLA stuck-deal alert</strong><br>Day X: Slack alert to AE. Day X+7: Escalate to Director. Day X+14: Auto-flag in HubSpot deal view.</div>
+      <span class="acstatus as-tbc">⚠️ Days TBC with DLS</span>
+    </div>
+    <div class="acard" style="border-color:var(--orb)">
+      <div class="acstage st8">Stage 8 — Closed Lost</div>
+      <div class="actrig">⚡ Trigger: Deal → Closed Lost + reason selected</div>
+      <div class="acact"><strong>Closed Lost routing</strong><br>Route by reason: Timing → nurture + recontact date. Competitor → renewal tracking. Budget → re-engage campaign.</div>
+      <span class="acstatus as-tbc">⚠️ Routing logic TBC with DLS</span>
     </div>
   </div>
 </div>
 
-
-<!-- ══ PROPERTIES VIEW ═══════════════════════════════════════ -->
+<!-- ══ PROPERTIES VIEW ══════════════════════════════════════════ -->
 <div id="view-properties" class="view">
-  <div class="sl">HubSpot Properties Needed</div>
+  <div class="sl" style="margin-bottom:18px">Required HubSpot Deal Properties</div>
   <table class="ptable">
-    <thead><tr><th>Property</th><th>Object</th><th>Type</th><th>Stage Required</th><th>Purpose</th></tr></thead>
+    <thead><tr><th>Property</th><th>Type</th><th>Stage</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td class="pn">lead_source</td><td><span class="pobj">Lead</span></td><td class="ptyp">Dropdown</td><td><span class="preq">New Lead →</span></td><td>Source category (PhantomBuster / SDR Manual / Website Calculator / Demo Booking / LinkedIn Ads / Organic / Event / Referral)</td></tr>
-      <tr><td class="pn">lead_source_detail</td><td><span class="pobj">Lead</span></td><td class="ptyp">Text</td><td><span class="preq">New Lead →</span></td><td>Granular: event name, LinkedIn campaign name, e.g. "Electrify Europe 2026"</td></tr>
-      <tr><td class="pn">lead_type</td><td><span class="pobj">Lead</span></td><td class="ptyp">Dropdown</td><td><span class="preq">New Lead →</span></td><td>Outbound / Inbound / Event / Referral</td></tr>
-      <tr><td class="pn">assigned_sdr</td><td><span class="pobj">Lead</span></td><td class="ptyp">Owner</td><td>New Lead</td><td>SDR responsible. Pre-assigned via Company record.</td></tr>
-      <tr><td class="pn">assigned_ae</td><td><span class="pobj">Lead</span></td><td class="ptyp">Owner</td><td>New Lead</td><td>Default AE for this lead. Can be reassigned.</td></tr>
-      <tr><td class="pn">pain_identified</td><td><span class="pobj">Lead</span></td><td class="ptyp">Text</td><td><span class="preq">Connected →</span></td><td>1–2 sentence synthesis of pain expressed. Auto-populated from call transcript (Phase 3). Also acts as AE handoff summary field.</td></tr>
-      <tr><td class="pn">compelling_event_exists</td><td><span class="pobj">Lead</span></td><td class="ptyp">Yes / No</td><td><span class="preq">Connected →</span></td><td>Is there a specific reason to act within 12 months? Binary gate — No = consider Closed Lost.</td></tr>
-      <tr><td class="pn">meeting_link</td><td><span class="pobj">Lead</span></td><td class="ptyp">Text</td><td>Meeting Booked</td><td>HubSpot Meetings / Google Meet URL for the discovery call</td></tr>
-      <tr><td class="pn">closed_lost_reason</td><td><span class="pobj">Lead</span></td><td class="ptyp">Dropdown</td><td><span class="preq">Closed Lost</span></td><td>Required on close. 10 reasons. Needs SDR sign-off on list.</td></tr>
-      <tr><td class="pn">recontact_date</td><td><span class="pobj">Lead</span></td><td class="ptyp">Date</td><td><span class="preq">Closed Lost</span></td><td>Mandatory — triggers new Reactivated Lead creation on this date.</td></tr>
-      <tr><td class="pn">recontact_trigger</td><td><span class="pobj">Lead</span></td><td class="ptyp">Text</td><td>Closed Lost</td><td>Optional: context for re-engagement (e.g. "when new energy trading regulation passes")</td></tr>
-      <tr><td class="pn">is_reactivated</td><td><span class="pobj">Lead</span></td><td class="ptyp">Checkbox</td><td>New (Reactivated)</td><td>Marks this as a reactivated lead. Original Closed Lost record linked via association.</td></tr>
-      <tr><td class="pn">sdr_status</td><td><span class="pobj">Company</span></td><td class="ptyp">Dropdown</td><td>Company level</td><td>Account-level SDR progress: Not Started / In Progress / Connected / Qualified / Disqualified / Re-engage</td></tr>
-      <tr><td class="pn">assigned_sdr</td><td><span class="pobj">Company</span></td><td class="ptyp">Owner</td><td>Company level</td><td>Pre-assigned SDR for this account. Inherited by leads from this company.</td></tr>
+      <tr><td><span class="pn">deal_name</span></td><td><span class="ptyp">Text</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">deal_amount</span></td><td><span class="ptyp">Number (€82K default)</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">close_date</span></td><td><span class="ptyp">Date</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">deal_source</span></td><td><span class="ptyp">Dropdown</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_status_quo</span></td><td><span class="ptyp">Text</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">compelling_event</span></td><td><span class="ptyp">Text</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">compelling_event_date</span></td><td><span class="ptyp">Date</span></td><td>Stage 1</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_urgency</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_gap</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_stakeholders</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_alternatives</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">economic_buyer_name</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">economic_buyer_intro_done</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">competitor_alternatives</span></td><td><span class="ptyp">Text</span></td><td>Stage 2</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sow_approved</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 3</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">purple_sheet_complete</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 3</td><td><span class="ptbc">⚠️ TBC — what is Purple Sheet?</span></td></tr>
+      <tr><td><span class="pn">se_tech_qual_notes</span></td><td><span class="ptyp">Text</span></td><td>Stage 3</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_roi</span></td><td><span class="ptyp">Text</span></td><td>Stage 4</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sugar_roadmap</span></td><td><span class="ptyp">Text</span></td><td>Stage 4</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">pov_outcome</span></td><td><span class="ptyp">Text</span></td><td>Stage 4</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">decision_criteria</span></td><td><span class="ptyp">Text</span></td><td>Stage 4</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">eb_meeting_done</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 4</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">sign_date</span></td><td><span class="ptyp">Date</span></td><td>Stage 5</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">signer_name</span></td><td><span class="ptyp">Text</span></td><td>Stage 5</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">contract_terms</span></td><td><span class="ptyp">Text</span></td><td>Stage 5</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">discount_pct</span></td><td><span class="ptyp">Number (%)</span></td><td>Stage 5</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">vendor_of_choice_confirmed</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 6</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">billing_details_uploaded</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 7</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">onboarding_deck_complete</span></td><td><span class="ptyp">Checkbox</span></td><td>Stage 7</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">csm_handover_notes</span></td><td><span class="ptyp">Text (AI-generated)</span></td><td>Stage 7</td><td><span class="preq">REQ</span></td></tr>
+      <tr><td><span class="pn">closed_lost_reason</span></td><td><span class="ptyp">Dropdown</span></td><td>Stage 8</td><td><span class="ptbc">⚠️ TBC — taxonomy with DLS</span></td></tr>
+      <tr><td><span class="pn">closed_lost_detail</span></td><td><span class="ptyp">Text</span></td><td>Stage 8</td><td>Optional</td></tr>
     </tbody>
   </table>
-  <div style="margin-top:14px;padding:12px 14px;background:#fff;border:1px solid var(--b);border-radius:var(--r);font-size:12px;color:var(--tm);line-height:1.6;box-shadow:var(--shadow)">
-    <strong style="color:var(--th)">Build order:</strong> lead_source + lead_type + lead_source_detail (day 1 — attribution critical) → pain_identified + compelling_event_exists → closed_lost_reason + recontact_date + is_reactivated → sdr_status on Company.
+  <div style="margin-top:14px;padding:10px 14px;background:var(--ord);border:1px solid var(--orb);border-radius:var(--r);font-size:12px;color:#92400e">
+    ⚠️ <strong>Also TBC with DLS (Q6):</strong> Which Lead properties transfer automatically when a deal is created at SQL? Full list needed — company name, contact, source, pain, compelling event, SUGAR captured during lead stage.
   </div>
 </div>
 
-
-<!-- ══ FLOWS VIEW ════════════════════════════════════════════ -->
+<!-- ══ FLOWS VIEW ══════════════════════════════════════════ -->
 <div id="view-flows" class="view">
-  <div class="sl">Key Automation Flows</div>
+  <div class="sl" style="margin-bottom:18px">Key Deal Flows</div>
 
   <div class="fblock">
-    <h3>🤖 Stage Transition Auto-Summary (Phase 2 build)</h3>
-    <div class="fcode">
-<span class="fs">SDR moves lead to new stage</span>
-        ↓
-<span class="fau">HubSpot workflow fires on stage change</span>
-<span class="fa">  → Webhook to Zapier / Make</span>
-        ↓
-<span class="fsum">Fetch from HubSpot: contact + company + lead properties + full activity timeline</span>
-        ↓
-<span class="fsum">Send to Claude API with stage-specific prompt template:</span>
-<span class="fa">  Connected entry    → "Outreach Summary: what was tried, what connected, qualifying signals"</span>
-<span class="fa">  Meeting Booked     → "AE Handoff Brief: who they are, pain, compelling event, history, next step"</span>
-<span class="fa">  SQL entry          → "Full qualification summary: all SUGAARR criteria + SDR history"</span>
-<span class="fa">  Closed Lost        → "Closure summary: what was tried, why it closed, re-engagement context"</span>
-        ↓
-<span class="fau">Structured note created on Lead record via HubSpot API</span>
-<span class="fsl">Slack to SDR / AE: "Summary note ready for [Company] → [link]"</span>
-    </div>
+    <h3>Flow 1 — Deal Creation from SQL</h3>
+    <div class="fcode"><span class="fs">Lead reaches SQL in lead pipeline</span>
+  <span class="fa">→ Enrichment check:</span> <span class="fs">2/5 SUGAR confirmed · compelling event · path to DMs</span>
+  <span class="fa">→</span> <span class="fau">HubSpot workflow auto-creates New Deal</span>
+  <span class="fa">→</span> <span class="fau">Key lead fields copy across to deal</span> <span class="fw">⚠️ Fields list TBC (Q6)</span>
+  <span class="fa">→</span> <span class="fsl">Slack alert fires to AE with lead summary</span>
+  <span class="fa">→</span> <span class="fs">AE reviews and begins discovery</span></div>
   </div>
 
   <div class="fblock">
-    <h3>🔄 Re-engagement Flow (Closed Lost → New Lead)</h3>
-    <div class="fcode">
-<span class="fs">Lead closed as Closed Lost · recontact_date set</span>
-        ↓
-<span class="fs">Time passes... recontact_date is reached</span>
-        ↓
-<span class="fau">Workflow fires: NEW Lead record created for same contact</span>
-<span class="fa">  → is_reactivated = true</span>
-<span class="fa">  → Associated to original Closed Lost Lead record</span>
-<span class="fa">  → Stage = New Lead</span>
-<span class="fa">  → Original close reason surfaced in SDR task</span>
-        ↓
-<span class="fau">SDR task: "🔄 Re-engage [Company] — closed [date], reason: [reason] — [link to original]"</span>
-<span class="fw">  Original Closed Lost record stays closed permanently — no backwards movement</span>
-    </div>
+    <h3>Flow 2 — Stuck Deal SLA Escalation</h3>
+    <div class="fcode"><span class="fs">Deal enters a stage</span>
+  <span class="fa">→ Timer starts</span>
+  <span class="fa">→ Day X:</span> <span class="fsl">AE receives Slack alert: "Deal stalled — [Company]"</span>
+  <span class="fa">→ Day X+7:</span> <span class="fsl">If no movement → Director Slack alert</span>
+  <span class="fa">→ Day X+14:</span> <span class="fw">Auto-flag in HubSpot deal view</span></div>
+    <div class="ftbc-note">⚠️ X value per stage TBC with DLS (Q3). Need a day count for each of the 6 active stages.</div>
   </div>
 
   <div class="fblock">
-    <h3>🤖 PhantomBuster Enrichment Flow</h3>
-    <div class="fcode">
-<span class="fs">Thomas runs PhantomBuster LinkedIn scraper</span>
-<span class="fa">  → Input: HubSpot Company records (~200 ICP utilities)</span>
-<span class="fa">  → Target roles: Innovation Manager / Head of Product / Trading Lead / Energy Manager / Head of Energy Trading</span>
-        ↓
-<span class="fau">Two outputs: ICP List (enriched company data) + Persona List (contacts ranked by role fit)</span>
-        ↓
-<span class="fau">HubSpot integration: Contact created / enriched → Lead auto-created → Stage = New Lead</span>
-<span class="fau">SDR task: "New enriched lead — [Name] at [Company] — [LinkedIn link]"</span>
-    </div>
+    <h3>Flow 3 — SoW Approval Flow (Hard Gate)</h3>
+    <div class="fcode"><span class="fs">AE completes SE tech qual call</span>
+  <span class="fa">→</span> <span class="fgate">Directors + SE approve move (manual gate)</span>
+  <span class="fa">→ AE prepares SoW + Purple Sheet</span> <span class="fw">⚠️ Purple Sheet definition TBC (Q7)</span>
+  <span class="fa">→ Deal moves to SoW Approval stage</span>
+  <span class="fa">→</span> <span class="fsl">Auto-notify Chris with SoW link</span>
+  <span class="fa">→ Chris reviews</span>
+    <span class="fa">  → Approved:</span> <span class="fau">Deal moves to Biz &amp; Tech Eval · POV/POC begins</span>
+    <span class="fa">  → Rejected:</span> <span class="fw">Deal returns to Qualified Deal with rejection notes</span></div>
   </div>
 
   <div class="fblock">
-    <h3>🌐 Inbound Lead Flow</h3>
-    <div class="fcode">
-<span class="fs">Contact fills website calculator OR books demo via HubSpot Meetings</span>
-        ↓
-<span class="fau">Lead auto-created:</span>
-<span class="fa">  Website Calculator → Stage = New Lead,      lead_source = Inbound — Website Calculator</span>
-<span class="fa">  Demo Booking       → Stage = Meeting Booked, lead_source = Inbound — Demo Booking</span>
-        ↓
-<span class="fau">Default SDR assigned · SDR task: "🔥 Inbound lead — respond within 24h — [link]"</span>
-<span class="fsl">Slack: same message</span>
-<span class="fw">  ⚠️ To confirm: which AE gets default inbound assignment?</span>
-    </div>
+    <h3>Flow 4 — Closed Lost Routing</h3>
+    <div class="fcode"><span class="fs">AE marks deal Closed Lost</span>
+  <span class="fa">→ AE required to select closed_lost_reason (mandatory)</span>
+  <span class="fa">→ Routing by reason:</span>
+    <span class="fau">  Timing      → Nurture track: recontact_date set, task fires at date</span>
+    <span class="fau">  Budget      → Re-engage campaign triggered</span>
+    <span class="fau">  Competitor  → Competitor tracking log + re-engage at renewal date</span>
+    <span class="fa">  Other       → Manual AE follow-up task</span></div>
+    <div class="ftbc-note">⚠️ Lost reason taxonomy + routing rules TBC with DLS (Q4, Q5).</div>
   </div>
 
   <div class="fblock">
-    <h3>🤝 AE Handoff (Meeting Booked → SQL)</h3>
-    <div class="fcode">
-<span class="fs">Lead reaches Meeting Booked</span>
-        ↓
-<span class="fau">Task to AE: "📅 [Name] at [Company] — discovery call [date] — [link]"</span>
-<span class="fsl">Slack to AE: same · Auto-summary note generated (Phase 2)</span>
-        ↓
-<span class="fs">AE reviews pain_identified + auto-summary before the call</span>
-        ↓
-<span class="fau">AE creates Unqualified Deal in Deal Pipeline</span>
-<span class="fa">  → lead_source + lead_source_detail carried to Deal · Lead stays in SQL</span>
-    </div>
+    <h3>Flow 5 — Closed Won → CSM Handoff</h3>
+    <div class="fcode"><span class="fs">Contract signed → Deal moves to Closed Won</span>
+  <span class="fa">→</span> <span class="fsl">Auto-task to AE: "Complete onboarding deck + upload billing details"</span>
+  <span class="fa">→</span> <span class="fsum">Zapier: Claude generates full SUGAARR handover summary → HubSpot pinned note</span>
+  <span class="fa">→</span> <span class="fsl">Slack to AE + CSM: "New client — [Company] · Handover note in HubSpot"</span>
+  <span class="fa">→</span> <span class="fs">CSM takes ownership</span></div>
   </div>
 </div>
 
+<!-- ══ QUESTIONS VIEW ══════════════════════════════════════════ -->
+<div id="view-questions" class="view">
+  <div class="qwrap">
+    <div class="qprompt-bar">
+      <div>
+        <div class="qprompt-label">Copy Claude Prompt for DLS Team</div>
+        <div class="qprompt-sub">Paste into Claude · DLS team answers inline · Returns structured answers ready to build from</div>
+      </div>
+      <button class="qcopy-btn" id="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">Stage Definitions</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q1')">
+          <span class="qnum">Q1</span>
+          <span class="qtitle">What is the precise definition of "Committed"?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q1">
+          <p>The Committed stage (90%) is entered when the prospect states Podero is vendor of choice and gives a sign date. But what exactly constitutes "Committed" — and what does it mean for forecasting accuracy?</p>
+          <ul class="qopts">
+            <li>Verbal statement on a call</li>
+            <li>Written confirmation (email / Slack)</li>
+            <li>Contract sent and under review</li>
+            <li>Purchase order raised</li>
+            <li>Something else</li>
+          </ul>
+          <p style="font-size:11px;color:var(--or)">⚠️ This definition directly affects forecasting. Without a clear answer, the 90% probability is unreliable.</p>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q2')">
+          <span class="qnum">Q2</span>
+          <span class="qtitle">What are the full qualification criteria for Unqualified → Qualified Deal?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q2">
+          <p>We know the exit criteria include 3/5 SUGAR (S + U + G minimum), a compelling event within 12 months, and alignment with a key business initiative. Are there additional requirements not captured here?</p>
+          <ul class="qopts">
+            <li>Is there a formal checklist or scoring threshold?</li>
+            <li>Does the AE need to self-certify in HubSpot?</li>
+            <li>Does SE need to review at this stage too, or only at Qualified → SoW Approval?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">SLA Windows</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q3')">
+          <span class="qnum">Q3</span>
+          <span class="qtitle">How many days before an alert fires per stage?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q3">
+          <p>We need a number of days for each stage. If there is no formal SLA yet, we will set defaults and the team can adjust. These values gate the stuck-deal alert automations.</p>
+          <table class="qtable">
+            <thead><tr><th>Stage</th><th>Days before AE alert</th><th>Days before Director escalation</th></tr></thead>
+            <tbody>
+              <tr><td>New Deal</td><td>?</td><td>?</td></tr>
+              <tr><td>Qualified Deal</td><td>?</td><td>?</td></tr>
+              <tr><td>SoW Approval</td><td>?</td><td>?</td></tr>
+              <tr><td>Biz &amp; Tech Eval</td><td>?</td><td>?</td></tr>
+              <tr><td>Commercial Review</td><td>?</td><td>?</td></tr>
+              <tr><td>Commit</td><td>?</td><td>?</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">Closed Lost</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q4')">
+          <span class="qnum">Q4</span>
+          <span class="qtitle">What are the defined Closed Lost reason values in HubSpot?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q4">
+          <p>We need a fixed taxonomy for the dropdown field in HubSpot. Proposed starting list below — please add, remove, or rename:</p>
+          <div class="qprop">
+            <span>Timing (not now)</span><span>Budget (no funds)</span><span>Competitor (chose another vendor)</span><span>No compelling event</span><span>No Economic Buyer</span><span>Internal priority shift</span><span>Technical fit</span><span>Other</span>
+          </div>
+          <p>Also: the existing HubSpot Reason Closed Lost dropdown already has: Later Interest / No prio/time/resources / No budget / No product fit / Price too expensive / Ghosting. Should these be merged or replaced?</p>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q5')">
+          <span class="qnum">Q5</span>
+          <span class="qtitle">What happens after Closed Lost? Reactivation paths by reason?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q5">
+          <p>Is there a reactivation path, and does it differ by loss reason? Proposed logic:</p>
+          <ul class="qopts">
+            <li>Lost to Timing → re-engage in X months (how many?)</li>
+            <li>Lost to Competitor → track renewal date, re-engage at renewal</li>
+            <li>Lost to Budget → Re-engage campaign (what triggers this?)</li>
+            <li>Lost to No EB → close permanently or different re-engage?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">HubSpot Data Model</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q6')">
+          <span class="qnum">Q6</span>
+          <span class="qtitle">Which Lead fields transfer automatically to the Deal at SQL creation?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q6">
+          <p>Goal: "beautiful high-quality deal" with fields pre-filled when AE opens it. Suggested fields to transfer from Lead to Deal — confirm which are available and which to add:</p>
+          <div class="qprop">
+            <span>Company name</span><span>Contact name + role</span><span>Lead source</span><span>Pain identified</span><span>Compelling event + date</span><span>SUGAR from lead stage</span>
+          </div>
+          <ul class="qopts">
+            <li>Are there others we should transfer?</li>
+            <li>Are any of these NOT available as Lead object properties today?</li>
+            <li>Should deal_amount default to €82,000 or pull from a lead property?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q7')">
+          <span class="qnum">Q7</span>
+          <span class="qtitle">What is the Purple Sheet?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q7">
+          <p>Referenced as a hard gate at SoW Approval — Chris must approve SoW + Purple Sheet before Biz &amp; Tech Eval. We need to understand this fully to model it in HubSpot.</p>
+          <ul class="qopts">
+            <li>What fields/sections does it contain?</li>
+            <li>Is it a HubSpot object, a Google Doc template, or a Notion page?</li>
+            <li>Who fills it in — AE, SE, or both?</li>
+            <li>Should it live in HubSpot as a property set, or stay external with a link?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">Approvals and Roles</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q8')">
+          <span class="qnum">Q8</span>
+          <span class="qtitle">Which Directors must approve at the Qualified Deal → SoW Approval gate?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q8">
+          <p>The Q1 2026 change states "Directors &amp; SE must approve" before a deal moves to Biz &amp; Tech Eval. We need clarity to build the approval notification correctly.</p>
+          <ul class="qopts">
+            <li>Fixed list of named Directors — if yes, who are they?</li>
+            <li>Any Director-level person in the org — if yes, how do we assign in HubSpot?</li>
+            <li>Does a Director need to approve in HubSpot (button/task), or is Slack enough?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">Pipeline Structure</div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q9')">
+          <span class="qnum">Q9</span>
+          <span class="qtitle">Is there a Nurture stage in the deal pipeline, or do quiet deals always go to Closed Lost?</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q9">
+          <p>The current plan removes Nurture as a pipeline stage (155 zombie deals cleanup). When deals go quiet, they should close with a reason + recontact date. But is there a scenario where a deal should stay "active but paused" rather than closing?</p>
+          <ul class="qopts">
+            <li>Always close as Closed Lost with "Timing" reason + recontact date — preferred approach</li>
+            <li>Keep a Nurture stage but fix the zombie problem with strict rules</li>
+            <li>Different logic depending on deal stage (e.g., a Committed-stage deal going quiet vs. Unqualified)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q10')">
+          <span class="qnum">Q10</span>
+          <span class="qtitle">Are there deal disqualification triggers? (e.g., no EB intro within X days)</span>
+          <span class="qtbc">⚠️ TBC</span>
+        </div>
+        <div class="qbody" id="q10">
+          <p>Should there be automatic flags or forced stage changes if certain conditions are not met within a time window?</p>
+          <ul class="qopts">
+            <li>No EB intro within X days of Qualified Deal → auto-flag?</li>
+            <li>No activity logged in X days → auto-escalate?</li>
+            <li>POV running longer than X weeks with no outcome → alert?</li>
+            <li>Sign date passed with no signature → flag in Committed stage?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qsec">
+      <div class="qsec-title">Bonus Input</div>
+      <div class="qcard">
+        <div class="qcard-hdr" onclick="toggleQ('q11')">
+          <span class="qnum">Bonus</span>
+          <span class="qtitle">What automations does the sales team wish existed today?</span>
+        </div>
+        <div class="qbody" id="q11">
+          <p>Beyond SLA alerts and the 10 automations already planned, are there manual tasks causing friction that could be automated? For example:</p>
+          <ul class="qopts">
+            <li>Meeting prep notes auto-pulled before a discovery call?</li>
+            <li>Auto-reminder to update SUGAARR fields after each call?</li>
+            <li>Forecasting roll-up for pipeline review meetings?</li>
+            <li>Anything else the team complains about doing manually?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /qwrap -->
 </div>
+
+<!-- ══ PROMPT VIEW ══════════════════════════════════════════ -->
+<div id="view-prompt" class="view">
+  <div class="pwrap">
+
+    <div class="pblock" style="border-color:var(--acb);background:var(--acd)">
+      <div class="pblock-title" style="color:#1e40af">⚡ What this prompt does</div>
+      <div class="pblock-sub" style="color:#1e40af">Copy the prompt below and paste it into Claude. Claude will interview you — or your DLS/sales team — through a structured conversation covering every stage, edge case, SLA, automation, and open question. It keeps asking until everything is clear, then writes a complete <code style="background:rgba(0,0,0,.06);padding:1px 5px;border-radius:3px">.md</code> document you can send back to Thomas to finalise the HubSpot build.</div>
+      <div class="ptopics">
+        <span class="ptopic">Stage gates</span><span class="ptopic">Exit criteria</span><span class="ptopic">SLA windows</span><span class="ptopic">Ownership</span><span class="ptopic">Purple Sheet</span><span class="ptopic">EB rules</span><span class="ptopic">Closed Lost taxonomy</span><span class="ptopic">Reactivation paths</span><span class="ptopic">Automations</span><span class="ptopic">Edge cases</span><span class="ptopic">Data model</span><span class="ptopic">Forecasting</span>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <div class="pblock-title">How to use it</div>
+      <ul class="psteps">
+        <li><span class="pstep-num">1</span>Click <strong>Copy Prompt</strong> below. Paste it into Claude (claude.ai or the Claude app).</li>
+        <li><span class="pstep-num">2</span>Answer Claude's questions in plain language — no prep needed. Use voice if that's easier.</li>
+        <li><span class="pstep-num">3</span>Claude will keep digging until it has a complete picture. Say "done" or "move on" to skip a topic.</li>
+        <li><span class="pstep-num">4</span>At the end, Claude writes a full <code style="background:var(--bg);padding:1px 5px;border-radius:3px">.md</code> document covering the entire deal pipeline — all stages, gates, automations, edge cases, and decisions. Copy it and send to Thomas.</li>
+      </ul>
+    </div>
+
+    <div class="pblock">
+      <div class="pblock-title">Copy the prompt</div>
+      <div class="pblock-sub">Works best with Claude Sonnet or Opus. Voice mode works — just talk through each section.</div>
+      <div class="pcopy-row">
+        <button class="pcopy-btn" id="main-copy-btn" onclick="copyMainPrompt()">Copy Prompt</button>
+        <div class="pcopy-hint">~3,000 tokens · paste directly into a new Claude conversation<br>Enable voice mode (headphone icon) to answer by speaking</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /main -->
 
 <script>
-var curStage=null,curTab='overview';
-var stageNames={'new-lead':'Stage 1 — New Lead','attempting':'Stage 2 — Attempting','connected':'Stage 3 — Connected','meeting-booked':'Stage 4 — Meeting Booked','sql':'Stage 5 — SQL','closed-lost':'Stage 6 — Closed Lost'};
-var stageBadgeCls={'new-lead':'bns','attempting':'bip','connected':'bip','meeting-booked':'bip','sql':'bq','closed-lost':'bdq'};
-var stageBadgeTxt={'new-lead':'Not Started','attempting':'In Progress','connected':'In Progress','meeting-booked':'In Progress','sql':'Qualified','closed-lost':'Disqualified'};
-
-function sv(view,btn){
-  document.querySelectorAll('.view').forEach(function(v){v.classList.remove('on')});
-  document.querySelectorAll('.tbtn').forEach(function(b){b.classList.remove('on')});
-  document.getElementById('view-'+view).classList.add('on');
+function sv(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.querySelectorAll('.tbtn').forEach(b => b.classList.remove('on'));
+  document.getElementById('view-' + id).classList.add('on');
   btn.classList.add('on');
+  closeDetail();
 }
 
-function openStage(id){
-  document.querySelectorAll('.sc').forEach(function(c){c.classList.remove('on')});
-  var card=document.getElementById('sc-'+id);
-  if(card)card.classList.add('on');
-  curStage=id;
-  var title=document.getElementById('det-title');
-  title.textContent='';
-  title.appendChild(document.createTextNode(stageNames[id]||id));
-  title.appendChild(document.createTextNode(' '));
-  var b=document.createElement('span');
-  b.className='badge '+(stageBadgeCls[id]||'bns');
-  b.textContent=stageBadgeTxt[id]||'';
-  title.appendChild(b);
-  showSec(id,curTab);
-  document.getElementById('det-panel').classList.add('on');
-  setTimeout(function(){document.getElementById('det-panel').scrollIntoView({behavior:'smooth',block:'nearest'})},80);
+let activeStage = null;
+function openStage(id) {
+  if (activeStage === id) { closeDetail(); return; }
+  activeStage = id;
+  document.querySelectorAll('.sc').forEach(c => c.classList.remove('on'));
+  document.getElementById('sc-' + id).classList.add('on');
+  document.querySelectorAll('.dsec').forEach(s => s.classList.remove('on'));
+  const panel = document.getElementById('det-panel');
+  panel.classList.add('on');
+  document.getElementById('det-' + id + '-overview').classList.add('on');
+  document.getElementById('det-title').textContent = document.getElementById('sc-' + id).querySelector('.sname').textContent + ' — Stage Detail';
+  document.querySelectorAll('.dtab').forEach((t, i) => t.classList.toggle('on', i === 0));
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  window._activeStage = id;
 }
-
-function closeDetail(){
+function closeDetail() {
+  activeStage = null;
+  window._activeStage = null;
+  document.querySelectorAll('.sc').forEach(c => c.classList.remove('on'));
   document.getElementById('det-panel').classList.remove('on');
-  document.querySelectorAll('.sc').forEach(function(c){c.classList.remove('on')});
-  curStage=null;
 }
-
-function sdt(tab,btn){
-  curTab=tab;
-  document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('on')});
+function sdt(tab, btn) {
+  const id = window._activeStage;
+  if (!id) return;
+  document.querySelectorAll('.dsec').forEach(s => s.classList.remove('on'));
+  document.getElementById('det-' + id + '-' + tab).classList.add('on');
+  document.querySelectorAll('.dtab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  if(curStage)showSec(curStage,tab);
+}
+function toggleQ(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('on');
+}
+function copyMainPrompt() {
+  const prompt = `You are a deal pipeline expert helping the Podero sales team build their complete deal pipeline in HubSpot. Your job is to interview me — through conversation — until you have a full, unambiguous picture of how the pipeline works end to end. Then you will write a complete .md document I can send to our GTM engineer (Thomas).
+
+## Your role
+
+You are a structured interviewer. You go topic by topic. You do not move on until a topic is fully clear. You ask follow-up questions when answers are vague. You surface contradictions and challenge anything that would cause problems in practice. You keep the conversation human and natural — this can be done by voice.
+
+At the end of the conversation you write a complete Markdown (.md) document covering everything we discussed. I will copy that document and send it to Thomas so he can finalise the HubSpot build.
+
+## What we already know — do not re-ask these, but do probe for gaps
+
+**Company:** Podero — energy data platform for utilities and traders. Standard deal: €82,000 / 3-year contract. Deals vary significantly in size, duration, and complexity (Beni confirmed).
+
+**Pipeline — 8 stages:**
+1. New Deal (5%) — AE creates after qualifying the SDR's initial call. SDRs do NOT qualify. Some AEs are creating deals from any meeting with an ICP company — this is a known quality problem that mandatory HubSpot fields must solve.
+2. Qualified Deal (25%) — 4/5 SUGAR, EB intro, MAP, SE alignment. Champion is often an Innovation Manager or Head of Product. Key buying signals: customer suggests agenda, brings others to calls, completes tasks given to them.
+3. SoW Approval (30%) — Chris approves SoW + Purple Sheet before SE resources committed. IMPORTANT: Sasu was confused about what this stage is for — she thought it was about waiting for the EB to accept a meeting, not Chris approving scope. She suggested it might make more sense inside Biz & Tech Eval. This stage's purpose and placement needs to be resolved.
+4. Biz & Tech Eval (35%) — POV/POC phase. Two parallel tracks: business (ROI, EB relationship) and technical (POC delivery, SE sign-off). Often the longest stage.
+5. Commercial Review (50%) — scope defined, proposal provided, negotiating terms. Deals often stay here a long time before moving to Committed.
+6. Committed (90%) — SUPER STRICT (Sasu's word). Requires: verbal YES from the Economic Buyer (not the champion), known timeline to signature, established next steps toward signature. Sasu: "we prevent deals from slipping by being very strict here."
+7. Closed Won — billing, onboarding deck, SUGAARR handover, CSM takes ownership.
+8. Closed Lost — reason required (taxonomy TBC), routing logic by reason.
+
+**Sales framework: SUGAARR**
+S = Status Quo | U = Urgency | G = Gap | A = All Stakeholders | A = Alternatives | R = ROI | R = Roadmap
+
+**Other confirmed context:**
+- Partner deals (Endios, Grit X) currently live in the main pipeline — Nico building separate partner pipeline eventually
+- Nurture stage being removed — confirmed by both Beni and Sasu as a zombie deal problem that skews statistics
+- When nurtured deals reactivate, a new deal is created — old one rots. Fix: Closed Lost + Timing reason + recontact date
+- HubSpot is becoming the source of truth (was Notion). Christian committed to this.
+- Sasu wants the pipeline to reflect the buyer's journey, not just the vendor's internal process
+- Inbound leads currently minimal — Kat working on this
+
+**10 open questions still unresolved:**
+Q1: ✅ PARTIALLY ANSWERED — Committed = verbal YES from EB + known timeline + next steps. But still TBC: what if sign date passes with no signature? What if deal goes silent after Committed?
+Q2: Additional qualification criteria for New Deal → Qualified beyond 3/5 SUGAR?
+Q3: SLA windows — how many days per stage before alert fires?
+Q4: Closed Lost reason taxonomy — final list?
+Q5: Reactivation paths by loss reason
+Q6: Which Lead fields auto-transfer to the Deal at creation?
+Q7: What is the Purple Sheet — fields, location, who fills it?
+Q8: Which Directors must approve at Qualified → SoW Approval gate?
+Q9: Nurture stage — confirmed for removal but reactivation flow details TBC
+Q10: Deal disqualification triggers (e.g., no EB intro within X days)?
+
+**Critical unresolved issue:**
+The SoW Approval stage (Stage 3) has a purpose ambiguity: is it about Chris approving the scope/investment before committing SE resources, or is it about getting EB access early? Sasu didn't know what it was for. This must be resolved — it affects the entire pipeline structure.
+
+---
+
+## How the conversation works
+
+Go topic by topic. For each topic:
+1. Ask clearly — one or two focused questions at a time
+2. Probe vague or incomplete answers — do not accept "it depends" without follow-up
+3. Say "I want to make sure I have this right — are you saying that...?" to confirm
+4. Ask "What happens if...?" to surface edge cases
+5. Flag contradictions when you spot them: "You said X earlier but now you're saying Y — which is it?"
+
+When I say "done" or "move on", proceed to the next topic. When I say "go back to [topic]", revisit it. We can do this by voice — just talk naturally.
+
+---
+
+## Topics to cover in order
+
+### 1. SoW Approval stage — resolve the ambiguity (most critical structural question)
+Sasu (one of the two senior AEs) didn't know what this stage was for. We need a clear answer before anything else.
+- Is the purpose: Chris approves scope + investment before committing SE resources?
+- Or is it: getting EB access confirmed before starting the eval?
+- Or both? Or something else entirely?
+- Should it stay as a separate stage, or be collapsed into Biz & Tech Eval entry criteria?
+- If we keep it: what specifically must happen before a deal can leave this stage?
+- Who should be able to move a deal past this stage — AE alone, or does Chris need to do something in HubSpot?
+
+### 2. Stage gates — entry and exit criteria (go stage by stage)
+For each of the 8 stages:
+- What does a "good" deal look like when it arrives here?
+- What must be true before it can move forward?
+- Who decides — AE alone, AE + SE, Director, Chris?
+- Edge cases: when can a deal go backwards? What triggers a return?
+Start with Stage 1 (New Deal). Take your time.
+
+### 3. Committed stage — edge cases (partially answered, still has gaps)
+We know: verbal YES from EB + known timeline + next steps. Now probe the edges:
+- What if the champion says yes but the EB hasn't spoken yet — can the deal enter Committed?
+- What if the sign date passes with no signature — what happens in HubSpot? Alert? Auto-move to Closed Lost?
+- What if the deal goes completely silent after Committed — how many days before action?
+- Is there a scenario where a Committed deal goes back to Commercial Review?
+
+### 4. New Deal quality — the "any meeting" problem
+Sasu flagged that some AEs create a deal just from having a meeting with an ICP company. This is a quality problem.
+- What is the minimum bar for creating a deal? What would make an AE say "not yet"?
+- Which fields in HubSpot should be mandatory at deal creation to prevent low-quality deals?
+- Should the AE's manager or SE need to confirm anything before the deal is created?
+- What happens to deals created below the bar — who catches them and how fast?
+
+### 5. Economic Buyer — rules and edge cases
+"No EB, no deal" is the absolute rule. Explore every edge:
+- At what exact point must the EB be introduced — Qualified Deal entry or exit?
+- What counts as an "intro" — a Zoom call with EB present, an email CC, Chris meeting them separately?
+- What if the AE cannot get EB access after X days — is there an escalation? Auto-close?
+- Who is typically the EB at a utility company — CFO, COO, Head of Trading?
+- Chris must personally build a relationship with the EB — how does this get tracked?
+
+### 6. Purple Sheet — full specification (Q7)
+Hard gate at SoW Approval. We need every detail.
+- What is it? Notion template, Google Doc, HubSpot form, physical sheet?
+- What sections/fields does it contain? Walk through them.
+- Who fills it in — AE, SE, or both together?
+- How does Chris review and approve — in HubSpot, Notion, or email?
+- Should we migrate it into HubSpot as a set of required fields?
+
+### 7. Buyer's journey framing (Sasu's insight)
+Sasu said the process is too vendor-focused and the team should visualise the customer's buying journey.
+- At each stage, what is the customer experiencing and deciding?
+- What does the customer see, feel, and worry about at each stage?
+- What does the customer need to believe before they move to the next stage?
+- How does this perspective change what Podero does or tracks?
+
+### 8. SLA windows — specific numbers (Q3)
+For each active stage: days before AE alert fires, then days before Director escalation.
+- Are SLAs different for inbound vs outbound deals?
+- Different for large vs small deals?
+- Who can override an SLA per deal?
+
+### 9. Closed Lost — taxonomy and routing (Q4, Q5)
+Proposed reasons: Timing, Budget, Competitor, No EB, No compelling event, Internal priority shift, Technical fit, Other.
+For each: confirm it belongs, what it means precisely, and what happens next.
+- Timing: how many months before recontact?
+- Competitor: do we track which competitor?
+- No EB: do these ever reactivate, or permanently closed?
+- Budget: what triggers re-engagement?
+Also: existing HubSpot dropdown already has reasons — do we merge or replace?
+
+### 10. Approval chains and discount tiers (Q8)
+- Which Directors approve at Qualified → SoW Approval?
+- How does approval happen — HubSpot task, Slack, email?
+- Pricing tiers: AE up to 20%, Director 20-30%, GHoS/CEO 30%+. Any exceptions?
+- Can an AE who is also a Director self-approve?
+
+### 11. Lead → Deal data transfer (Q6)
+When a deal is created at SQL, which Lead properties should auto-populate?
+- Walk through: company name, contact, source, pain, compelling event, SUGAR notes
+- Any missing from the Lead object today?
+- Should deal_amount default to €82K or be AE-entered?
+
+### 12. Automations — friction points
+Beyond the 10 planned automations, what do AEs complain about doing manually?
+- Before a discovery call — any prep that wastes time?
+- After a POV — any confusion or dropped balls?
+- In forecasting calls — any data the team wishes was just there?
+- Call transcription and SUGAARR auto-population — Beni mentioned this interest. How should it work?
+
+### 13. Edge cases — stress test the pipeline
+Work through these scenarios:
+- Deal goes from New Deal → Closed Lost in 3 days. What happened? What fires?
+- Deal stalls in Biz & Tech Eval for 90 days. What chain of events?
+- Committed deal: sign date passes, AE stops responding. What happens?
+- Closed Lost (Timing) reactivates 6 months later. Exactly how is the new deal created?
+- AE tries to skip the Purple Sheet gate — what prevents this in HubSpot?
+- Partner deal (Endios) closes. Does it work differently than a direct deal?
+
+---
+
+## When we are done
+
+Once all topics are covered, write this document in full. Do not summarise. Write every section completely — this is a buildable specification.
+
+---
+
+# Podero Deal Pipeline — Complete Specification
+
+**Date:** [today]
+**Status:** Final — ready for HubSpot build
+**Prepared for:** Thomas MacFarlaine (GTM Engineer)
+**Sources:** Beni x Thomas (Apr 16 2026), Sasu x Thomas (Apr 16 2026), DLS conversation [today]
+
+## Executive Summary
+[2-3 sentences on what was decided and what changed from the draft]
+
+## Pipeline Stages
+
+For each stage:
+### Stage N — [Name] ([probability %])
+**Purpose:** [1 sentence]
+**Owner:** [who]
+**Entry criteria:** [bullet list — what must be true when deal arrives]
+**Required HubSpot fields:** [field — type — mandatory/optional]
+**Exit criteria:** [what must be true to advance]
+**Hard gates:** [approvals required, who must act]
+**Automations that fire on entry:** [list]
+**SLA:** [days before AE alert / days before Director escalation]
+**Edge cases:** [specific scenarios and what happens]
+**Buyer perspective:** [what the customer is experiencing at this stage]
+
+## SUGAARR Requirements by Stage
+[Table: stage / S / U / G / A(stakeholders) / A(alternatives) / R(ROI) / R(roadmap) — required vs optional]
+
+## SLA Windows
+[Table: stage / days to AE alert / days to Director / notes]
+
+## Closed Lost — Final Taxonomy and Routing
+[Table: reason / precise definition / auto-action / reactivation path / timeline]
+
+## Purple Sheet — Full Specification
+[Fields list, ownership, approval flow, HubSpot location]
+
+## Approval Chains
+[Qualified gate: who approves, how. Commercial Review: discount tiers]
+
+## Lead → Deal Data Transfer
+[Table: lead property / deal property / transfer method / mandatory?]
+
+## Deal Quality Rules
+[What fields are mandatory at New Deal creation. What prevents low-quality deals.]
+
+## Buyer Journey Overlay
+[What the customer sees/thinks/decides at each stage]
+
+## Automations — Complete List
+[Table: name / trigger / action / owner / status]
+
+## Deal Disqualification Triggers
+[Table: trigger / threshold / action / owner]
+
+## Partner Deals
+[How Endios/Grit X deals work today vs future partner pipeline]
+
+## Open Items (unresolved after this conversation)
+[List — with owner and deadline if possible]
+
+---
+
+*Thomas: this is the source of truth for the HubSpot deal pipeline build. Everything in this doc was confirmed in conversation with the sales team.*
+
+---
+
+**Start now.** Introduce yourself in one sentence, then go straight to the first topic: the SoW Approval stage ambiguity. Ask me what the stage is actually for.`;
+
+  navigator.clipboard.writeText(prompt).then(() => {
+    const btn = document.getElementById('main-copy-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 2500);
+  });
 }
 
-function showSec(stage,tab){
-  document.querySelectorAll('.dsec').forEach(function(s){s.classList.remove('on')});
-  var sec=document.getElementById('det-'+stage+'-'+tab);
-  if(sec)sec.classList.add('on');
+function copyPrompt() {
+  const prompt = `You are helping the Podero sales team finalise the deal pipeline for HubSpot. We have designed the full pipeline but have 10 open questions that need your input before we can build. Please answer each question inline. Be as specific as possible — the answers go directly into HubSpot automation logic and pipeline stage gates.
+
+Context: Podero sells a €82,000 / 3-year energy data platform to utilities and traders. The deal pipeline has 8 stages: New Deal (5%) → Qualified Deal (25%) → SoW Approval (30%) → Biz & Tech Eval (35%) → Commercial Review (50%) → Committed (90%) → Closed Won / Closed Lost. The sales framework is SUGAARR (Status Quo, Urgency, Gap, All Stakeholders, Alternatives, ROI, Roadmap).
+
+---
+
+## STAGE DEFINITIONS
+
+**Q1 — What is the precise definition of "Committed" (Stage 6 — 90%)?**
+
+The Committed stage is entered when the prospect states Podero is vendor of choice and gives a sign date. But what exactly constitutes "Committed" for forecasting purposes?
+
+Options:
+- [ ] Verbal statement on a call
+- [ ] Written confirmation (email / Slack)
+- [ ] Contract sent and under review
+- [ ] Purchase order raised
+- [ ] Something else
+
+**Your answer:**
+
+---
+
+**Q2 — What are the full qualification criteria for New Deal → Qualified Deal?**
+
+Currently documented exit criteria: 3/5 SUGAR (S + U + G minimum), compelling event within 12 months, alignment with key business initiative. What else is required? Is there a checklist or scoring threshold? Does SE review at this stage?
+
+**Your answer:**
+
+---
+
+## SLA WINDOWS
+
+**Q3 — How many days should a deal sit in each stage before an alert fires?**
+
+| Stage | Days before AE alert | Days before Director escalation |
+|-|-|-|
+| New Deal | ? | ? |
+| Qualified Deal | ? | ? |
+| SoW Approval | ? | ? |
+| Biz & Tech Eval | ? | ? |
+| Commercial Review | ? | ? |
+| Commit | ? | ? |
+
+**Your answer (fill in the table above):**
+
+---
+
+## CLOSED LOST
+
+**Q4 — What are the defined Closed Lost reason values?**
+
+Proposed list (add / remove / rename):
+- Timing (not now)
+- Budget (no funds approved)
+- Competitor (chose another vendor)
+- No compelling event (urgency lost)
+- No Economic Buyer (couldn't get EB access)
+- Internal priority shift
+- Technical fit
+- Other
+
+Note: Existing HubSpot dropdown already has: Later Interest / No prio/time/resources / No budget / No product fit / Price too expensive / Ghosting. Should we merge or replace?
+
+**Your final list:**
+
+---
+
+**Q5 — Reactivation paths after Closed Lost — does the logic differ by reason?**
+
+Proposed: Timing → re-engage in X months (how many?). Competitor → track renewal date. Budget → re-engage campaign. No EB → ?
+
+**Your answer:**
+
+---
+
+## HUBSPOT DATA MODEL
+
+**Q6 — Which Lead properties should auto-transfer to the Deal when created at SQL?**
+
+Goal: pre-filled deal when AE opens it. Suggested fields: company name, contact name + role, lead source, pain identified, compelling event + date, SUGAR from lead stage. Are there others? Any of these missing from Lead object today?
+
+**Your answer:**
+
+---
+
+**Q7 — What is the Purple Sheet?**
+
+Hard gate at SoW Approval — Chris must approve SoW + Purple Sheet before Biz & Tech Eval. We need: full field list, where it lives (HubSpot / Google Doc / Notion), and who fills it in (AE / SE / both).
+
+**Your answer:**
+
+---
+
+## APPROVALS AND ROLES
+
+**Q8 — Which Directors must approve at Qualified Deal → SoW Approval gate?**
+
+Q1 2026 rule: "Directors & SE must approve" before moving to Biz & Tech Eval. Fixed list of named people, or any Director-level? Does approval happen in HubSpot or Slack?
+
+**Your answer:**
+
+---
+
+## PIPELINE STRUCTURE
+
+**Q9 — Nurture in the deal pipeline: always Closed Lost, or keep a Nurture stage?**
+
+Current plan: remove Nurture stage, close with "Timing" reason + recontact date. Is there any scenario where a deal should stay "active but paused" rather than closing?
+
+**Your answer:**
+
+---
+
+**Q10 — Are there deal disqualification triggers?**
+
+Should HubSpot auto-flag or force stage changes if: no EB intro within X days of Qualified Deal / no activity in X days / sign date passed with no signature / POV running past X weeks?
+
+**Your answer:**
+
+---
+
+## BONUS
+
+**What automations does the sales team wish existed today?**
+
+Beyond the 10 planned automations (SLA alerts, deal creation, SOW approval, SE assignment, pricing approval, Commit ping, CSM handoff, Claude summary), what manual tasks cause the most friction?
+
+**Your suggestions:**
+
+---
+
+*Once you have answered all questions, send the completed doc back and we will finalise the pipeline build in HubSpot.*`;
+
+  navigator.clipboard.writeText(prompt).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 2000);
+  });
 }
 </script>
 </body>
